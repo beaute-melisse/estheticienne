@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Beauté des Ongles — Tarifs</title>
+  <title>Élégance & Douceur des Jambes — Tarifs Épilation</title>
+
   <style>
-    
     :root{
       --text: #3f2e1f;
       --accent: #305718;
@@ -14,16 +14,21 @@
       --btn-text: #ffffff;
       --bg: #f4e7d7;
       --bg2: #ead7c0;
-      --card: rgba(255,255,255,.58);
+      --card: rgba(255,255,255,.62);
       --stroke: rgba(63,46,31,.18);
       --shadow: 0 14px 35px rgba(63,46,31,.15);
       --radius: 18px;
       --radius2: 26px;
       --max: 1120px;
-      --shine: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.12));
+
+      /* IMPORTANT: le bug venait surtout de ce masque/shine qui peut casser l'affichage sur certains navigateurs */
+      --shine: radial-gradient(700px 280px at 15% 10%, rgba(255,255,255,.55), transparent 60%);
     }
 
     *{box-sizing:border-box}
+    img{max-width:100%; height:auto;}
+
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
@@ -38,7 +43,7 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 26px 18px 70px;
+      padding: 18px 18px 70px;
     }
 
     /* =========================
@@ -166,16 +171,8 @@
   .dropdown-menu{ left: 0; right: 0; min-width: unset; }
 }
 
-    /* HERO */
-    header.hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      margin-top: 10px;
-      align-items: stretch;
-    }
-    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
 
+    /* CARD SYSTEM */
     .card{
       background: var(--card);
       border: 1px solid var(--stroke);
@@ -185,26 +182,39 @@
       overflow:hidden;
       position:relative;
     }
+    /* FIX: pseudo-element ne doit JAMAIS passer au-dessus du contenu */
     .card::before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute;
+      inset:0;
       background: var(--shine);
-      opacity:.35;
       pointer-events:none;
-      mask: radial-gradient(600px 240px at 18% 10%, #000 0%, transparent 60%);
+      z-index:0;        /* <-- clé */
+    }
+    /* FIX: tout le contenu des cards passe au-dessus */
+    .card > *{
+      position: relative;
+      z-index: 1;       /* <-- clé */
     }
 
-    .hero-left{ padding: 26px 24px 22px; }
+    /* HERO */
+    header.hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
 
+    .hero-left{ padding: 26px 24px 22px; }
     .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+      display:inline-flex; align-items:center; gap:10px;
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid rgba(48,87,24,.28);
       background: rgba(127,167,122,.18);
-      font-weight: 700;
+      font-weight: 750;
       letter-spacing:.2px;
       width: fit-content;
     }
@@ -213,27 +223,19 @@
       background: var(--accent);
       box-shadow: 0 0 0 4px rgba(48,87,24,.12);
     }
-
     h1{
       margin: 12px 0 10px;
       font-size: clamp(28px, 4vw, 46px);
       line-height:1.05;
       letter-spacing:-.4px;
     }
-
     .sub{
       margin: 0 0 12px;
       font-size: 1.05rem;
       opacity: .92;
-      max-width: 62ch;
+      max-width: 64ch;
     }
-
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 12px;
-    }
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .pill{
       display:inline-flex;
       align-items:center;
@@ -249,23 +251,21 @@
     .imgbox{
       border-radius: var(--radius2);
       overflow:hidden;
-      min-height:280px;
+      min-height: 320px;
       border: 1px solid rgba(63,46,31,.12);
       box-shadow: 0 10px 28px rgba(63,46,31,.10);
       background: rgba(255,255,255,.25);
     }
+    /* FIX: éviter que l'image prenne une hauteur incohérente */
     .imgbox img{
       width:100%;
-      height:100%;
+      height: 320px;
       object-fit: cover;
       display:block;
-      transform: scale(1.02);
     }
 
-    /* SECTION HEADERS */
-    .section{
-      margin-top: 26px;
-    }
+    /* SECTIONS */
+    .section{ margin-top: 26px; }
     .section-head{
       display:flex;
       align-items: stretch;
@@ -283,7 +283,7 @@
       padding: 14px 14px 14px 16px;
       border-radius: var(--radius2);
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.38);
+      background: rgba(255,255,255,.40);
       box-shadow: 0 12px 30px rgba(63,46,31,.10);
       overflow:hidden;
       position:relative;
@@ -291,13 +291,13 @@
     .section-banner::after{
       content:"";
       position:absolute; inset:0;
-      background: radial-gradient(600px 240px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
+      background: radial-gradient(650px 260px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
       pointer-events:none;
     }
     .section-title{
       margin:0;
       font-size: 1.35rem;
-      font-weight: 850;
+      font-weight: 900;
       letter-spacing:-.2px;
     }
     .section-sub{
@@ -323,7 +323,7 @@
       display:block;
     }
 
-    /* GRID */
+    /* GRID & SERVICES */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -333,6 +333,9 @@
       grid-column: span 6;
       padding: 16px 16px 14px;
       border-radius: var(--radius2);
+      display:flex;
+      flex-direction:column;
+      height: 100%;
       transition: transform .12s ease, filter .15s ease;
     }
     .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
@@ -351,7 +354,6 @@
       line-height:1.25;
       letter-spacing:-.1px;
     }
-
     .price{
       padding: 7px 10px;
       border-radius: 999px;
@@ -361,43 +363,50 @@
       white-space:nowrap;
     }
 
-    ul{ margin: 10px 0 0 18px; padding:0; }
-    li{ margin: 4px 0; }
-
-    .desc{
+    .list{
       margin: 10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .row{
+      display:flex;
+      align-items:baseline;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.30);
+    }
+    .row b{ font-weight: 750; }
+    .row span{ font-weight: 900; }
+
+    .hint{
+      margin-top:auto;
+      padding-top: 10px;
       font-size:.95rem;
       opacity:.9;
     }
-
-    .supp{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(67,41,12,.06);
-      border: 1px dashed rgba(67,41,12,.22);
-      font-size:.95rem;
-    }
-    .supp b{ color: var(--btn-dark); }
 
     .note{
       grid-column: span 12;
       padding: 16px;
     }
-
     .divider{
       height:1px;
       background: rgba(63,46,31,.12);
-      margin: 10px 0;
+      margin: 12px 0;
     }
+
   </style>
 </head>
 
 <body>
+  <div id="top"></div>
 
-   <div id="top"></div>
-
-  <header class="site-header">
+   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="#top" aria-label="Accueil">
         <img
@@ -414,182 +423,251 @@
       </nav>
     </div>
   </header>
-  <main class="container">
-    <section class="hero">
-      <div class="card hero-content">
-        <div class="badge">Beauté du regard - Tarifs </div>
 
-        <h1>Sublimez votre regard naturellement</h1>
-
-        <p class="intro">
-          Réhaussement, teinture ou extensions de cils : choisissez la prestation idéale
-          pour un regard plus intense, élégant et lumineux dès le réveil.
+  <div class="wrap">
+    <header class="hero">
+      <div class="card hero-left">
+        <div class="badge"><i></i> Épilation • Tarifs</div>
+        <h1>Élégance & Douceur</h1>
+        <p class="sub">
+          Des prestations claires et une épilation soignée, pour une peau douce et un résultat net.
+          Choisissez votre zone (visage ou corps) ou optez pour un forfait avantageux.
         </p>
-
         <div class="pill-row">
-          <span class="pill">Technique respectueuse du cil naturel</span>
-          <span class="pill">Résultat naturel ou glamour</span>
+          <span class="pill">Cire <b>PERRON RIGOT</b> — fabriquée en France</span>
+          <span class="pill">Fin de soin : huile nourrissante ou crème hypoallergénique</span>
         </div>
       </div>
 
-      <aside class="card hero-image">
-        <div class="image-frame">
+      <aside class="card hero-right">
+        <div class="imgbox">
           <img
             src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="Beauté du regard et cils">
+            alt="Élégance et douceur des jambes"
+            loading="lazy"
+          />
         </div>
       </aside>
-    </section>
+    </header>
 
-    <section class="section" id="rehaussement">
-      <div class="section-banner">
-        <div>
-          <h2 class="section-title">Réhaussement de cils</h2>
-          <p class="section-text">
-            Le réhaussement est parfait pour sublimer vos yeux naturellement grâce à vos cils recourbés.
-            Combiné avec une teinture, il permet d’intensifier le regard tout en gardant un effet naturel.
-          </p>
-        </div>
-
-        <div class="section-thumb" aria-hidden="true">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="">
+    <!-- SECTION: VISAGE -->
+    <section class="section" id="visage">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Épilation visage</h2>
+            <p class="section-sub">Des finitions nettes et naturelles, adaptées aux zones délicates.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
         </div>
       </div>
 
       <div class="grid">
-        <article class="card service full">
+        <section class="card service">
           <div class="service-head">
-            <h3>Prestations réhaussement</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Zones visage</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Réhaussement de cils</strong>
-              <span>48€</span>
-            </li>
-            <li class="price-row">
-              <strong>Réhaussement de cils + teinture</strong>
-              <span>53€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Joues / visage</b><span>5€</span></li>
+            <li class="row"><b>Menton / Lèvre</b><span>7€</span></li>
+            <li class="row"><b>Sourcils</b><span>7€</span></li>
           </ul>
-        </article>
+
+          <p class="hint">Idéal pour un entretien régulier ou une retouche express avant un événement.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfait visage</h3>
+            <div class="price">16€</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Sourcils</b><span>Inclus</span></li>
+            <li class="row"><b>Lèvre / menton</b><span>Inclus</span></li>
+            <li class="row"><b>Joues / visage</b><span>Inclus</span></li>
+          </ul>
+
+          <p class="hint">Le combo complet : sourcils + lèvre/menton + joues.</p>
+        </section>
       </div>
     </section>
 
-    <section class="section" id="extensions">
-      <div class="section-banner">
-        <div>
-          <h2 class="section-title">Extensions de cils</h2>
-          <p class="section-text">
-            Marre du mascara qui coule ? Les extensions de cils sont idéales pour gagner du temps
-            au quotidien. Optez pour un résultat très naturel avec le cil à cil, ou plus intense
-            et glamour avec la pose mixte.
-          </p>
-        </div>
-
-        <div class="section-thumb" aria-hidden="true">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="">
+    <!-- SECTION: CORPS -->
+    <section class="section" id="corps">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Épilation corps</h2>
+            <p class="section-sub">Choisissez votre zone : bras, jambes, aisselles, maillot…</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
         </div>
       </div>
 
       <div class="grid">
-        <article class="card service">
+        <section class="card service">
           <div class="service-head">
-            <h3>Cil à cil</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Zones corps</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Pose cil à cil</strong>
-              <span>65€</span>
-            </li>
-            <li class="price-row">
-              <strong>Comblage</strong>
-              <span>40€</span>
-            </li>
-            <li class="price-row">
-              <strong>Dépose + pose cil à cil</strong>
-              <span>75€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Aisselles</b><span>8€</span></li>
+            <li class="row"><b>Demi-bras</b><span>9€</span></li>
+            <li class="row"><b>Bras entier</b><span>13€</span></li>
+            <li class="row"><b>Maillot simple</b><span>10€</span></li>
+            <li class="row"><b>Maillot échancré</b><span>15€</span></li>
+            <li class="row"><b>Maillot semi intégral</b><span>20€</span></li>
+            <li class="row"><b>Maillot intégral (SIF)</b><span>25€</span></li>
           </ul>
-        </article>
 
-        <article class="card service">
+          <p class="hint">Prestation réalisée avec soin et discrétion.</p>
+        </section>
+
+        <section class="card service">
           <div class="service-head">
-            <h3>Mixte volume</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Jambes</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Pose mixte volume</strong>
-              <span>75€</span>
-            </li>
-            <li class="price-row">
-              <strong>Comblage</strong>
-              <span>50€</span>
-            </li>
-            <li class="price-row">
-              <strong>Dépose + pose mixte volume</strong>
-              <span>85€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Demi-jambes</b><span>15€</span></li>
+            <li class="row"><b>Cuisses</b><span>15€</span></li>
+            <li class="row"><b>3/4 jambes</b><span>19€</span></li>
+            <li class="row"><b>Jambes entières</b><span>22€</span></li>
           </ul>
-        </article>
 
-        <article class="card service full">
+          <p class="hint">Un rendu net et uniforme, idéal pour une peau douce plus longtemps.</p>
+        </section>
+
+        <section class="card service">
           <div class="service-head">
-            <h3>Soin du regard</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Autres zones</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Dépose + soin</strong>
-              <span>25€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Nez</b><span>3€</span></li>
+            <li class="row"><b>SIF</b><span>3€</span></li>
+            <li class="row"><b>Ventre</b><span>5€</span></li>
+            <li class="row"><b>Dos</b><span>5€</span></li>
+            <li class="row"><b>Fesses</b><span>5€</span></li>
           </ul>
-        </article>
+
+          <p class="hint">Pour toute zone non listée, n’hésitez pas à demander.</p>
+        </section>
       </div>
     </section>
-  </main>
 
-  <footer>
-    Beauté du regard — Tarifs indicatifs
-  </footer>
+    <!-- SECTION: FORFAITS -->
+    <section class="section" id="forfaits">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Forfaits corps</h2>
+            <p class="section-sub">Des packs clairs et avantageux, pour un résultat complet.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfaits avec demi-jambes</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Aisselles + maillot simple + demi-jambes</b><span>30€</span></li>
+            <li class="row"><b>Aisselles + maillot échancré + demi-jambes</b><span>35€</span></li>
+            <li class="row"><b>Aisselles + maillot semi intégral + demi-jambes</b><span>40€</span></li>
+            <li class="row"><b>Aisselles + maillot intégral + demi-jambes</b><span>45€</span></li>
+          </ul>
+
+          <p class="hint">Le pack le plus demandé pour une routine simple et efficace.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfaits avec jambes complètes</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Aisselles + maillot simple + jambes complètes</b><span>37€</span></li>
+            <li class="row"><b>Aisselles + maillot échancré + jambes complètes</b><span>42€</span></li>
+            <li class="row"><b>Aisselles + maillot semi intégral + jambes complètes</b><span>47€</span></li>
+            <li class="row"><b>Aisselles + maillot intégral + jambes complètes</b><span>52€</span></li>
+          </ul>
+
+          <p class="hint">Pour un résultat complet : jambes + zone sensible + aisselles.</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- SECTION: QUALITÉ & SOIN -->
+    <section class="section" id="qualite">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Qualité & confort</h2>
+            <p class="section-sub">Des produits pro, et une finition douce après chaque épilation.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="note card">
+          <p>
+            Je me sers exclusivement de la <strong>Cire PERRON RIGOT</strong>, produit fabriqué en France,
+            pour vous assurer une épilation de qualité professionnelle.
+          </p>
+          <div class="divider"></div>
+          <p>
+            Après épilation : huile nourrissante ou crème hydratante hypoallergénique,
+            composée uniquement des ingrédients nécessaires à votre peau.
+            <strong>Sans conservateur, ni parfum</strong> — idéal pour apaiser la peau.
+          </p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  
 
   <script>
-    const dropdown = document.getElementById("tarifsDropdown");
-    const button = document.getElementById("tarifsBtn");
+    (function(){
+      const dd = document.getElementById('tarifsDropdown');
+      const btn = document.getElementById('tarifsBtn');
 
-    function closeDropdown() {
-      dropdown.classList.remove("is-open");
-      button.setAttribute("aria-expanded", "false");
-    }
-
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-
-      const isOpen = dropdown.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    document.addEventListener("click", closeDropdown);
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeDropdown();
+      function closeDropdown(){
+        dd.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
       }
-    });
 
-    dropdown.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", closeDropdown);
-    });
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = dd.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', closeDropdown);
+      dd.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDropdown));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdown(); });
+    })();
   </script>
 </body>
 </html>
