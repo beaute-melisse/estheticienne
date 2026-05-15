@@ -3,33 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mentions légales — Beauté Mélisse</title>
-  <meta name="description" content="Mentions légales du site Beauté Mélisse (esthéticienne à domicile à Pourrières et alentours)." />
+  <title>Politique de confidentialité — Beauté Mélisse</title>
+  <meta name="description" content="Politique de confidentialité du site Beauté Mélisse." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --text: #3f2e1f;
-      --accent: #305718;
-      --btn: #7fa77a;
-      --btn-dark: #43290c;
-      --btn-text: #ffffff;
-      --bg: #f4e7d7;
-      --bg2: #ead7c0;
-      --card: rgba(255,255,255,.55);
-      --stroke: rgba(63,46,31,.18);
-      --shadow: 0 14px 35px rgba(63,46,31,.15);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1120px;
+      --text:#3f2e1f;
+      --accent:#305718;
+      --btn:#7fa77a;
+      --bg:#f4e7d7;
+      --bg2:#ead7c0;
+      --stroke:rgba(63,46,31,.18);
+      --shadow:0 14px 35px rgba(63,46,31,.15);
+      --radius2:26px;
+      --max:1120px;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
       margin:0;
       color:var(--text);
@@ -37,23 +32,19 @@
         radial-gradient(1200px 600px at 10% -10%, rgba(127,167,122,.20), transparent 60%),
         radial-gradient(900px 500px at 110% 10%, rgba(48,87,24,.14), transparent 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter, system-ui, sans-serif;
       line-height:1.55;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
-    .container{ width:min(var(--max), calc(100% - 48px)); margin-inline:auto; }
+    a{color:inherit;text-decoration:none;}
+    .container{width:min(var(--max), calc(100% - 48px));margin-inline:auto;}
 
-    /* =========================
-       HEADER — LOGO À GAUCHE XXL
-       ========================= */
     header{
       position:sticky;
       top:0;
       z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(244,231,215,.85);
+      backdrop-filter:blur(10px);
+      background:rgba(244,231,215,.85);
       border-bottom:1px solid var(--stroke);
     }
 
@@ -61,50 +52,47 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding: 14px 0;
-      gap: 18px;
+      padding:14px 0;
+      gap:18px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
     .brand img{
-      height: 200px;
+      height:200px;
       width:auto;
-      filter: drop-shadow(0 14px 26px rgba(63,46,31,.25));
+      filter:drop-shadow(0 14px 26px rgba(63,46,31,.25));
     }
 
     .nav-right{
       display:flex;
       align-items:center;
-      gap: 18px;
+      gap:18px;
     }
 
     .navlinks{
       display:flex;
       align-items:center;
-      gap: 18px;
+      gap:18px;
     }
 
     .navlinks a{
-      position:relative;
       font-weight:800;
       padding:10px 6px;
-      opacity:.95;
+      position:relative;
     }
 
     .navlinks a::after{
       content:"";
       position:absolute;
-      left:6px; right:6px; bottom:6px;
+      left:6px;
+      right:6px;
+      bottom:6px;
       height:2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform: scaleX(0);
-      transition: transform .2s ease;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform:scaleX(0);
+      transition:.2s;
     }
-    .navlinks a:hover::after{ transform: scaleX(1); }
+
+    .navlinks a:hover::after{transform:scaleX(1);}
 
     .btn{
       display:inline-flex;
@@ -112,18 +100,13 @@
       gap:10px;
       padding:12px 18px;
       border-radius:999px;
-      background: linear-gradient(180deg, var(--btn), #6f9f6a);
+      background:linear-gradient(180deg, var(--btn), #6f9f6a);
       color:#fff;
       font-weight:900;
-      border:1px solid rgba(255,255,255,.25);
-      box-shadow: 0 14px 30px rgba(67,41,12,.22);
-      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow:0 14px 30px rgba(67,41,12,.22);
       white-space:nowrap;
     }
-    .btn:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 38px rgba(67,41,12,.28);
-    }
+
     .wa-dot{
       width:10px;
       height:10px;
@@ -137,675 +120,697 @@
       height:44px;
       border-radius:12px;
       border:1px solid var(--stroke);
-      background: rgba(255,255,255,.35);
+      background:rgba(255,255,255,.35);
       align-items:center;
       justify-content:center;
       cursor:pointer;
     }
-    .burger span{
-      width:18px;
-      height:2px;
-      background: var(--text);
-      position:relative;
-    }
+
+    .burger span,
     .burger span::before,
     .burger span::after{
-      content:"";
-      position:absolute;
-      left:0;
       width:18px;
       height:2px;
-      background: var(--text);
-    }
-    .burger span::before{ top:-6px; }
-    .burger span::after{ top:6px; }
-
-    .mobile-panel{
-      display:none;
-      padding: 10px 0 18px;
-    }
-    header[data-open="true"] .mobile-panel{
-      display:block;
-    }
-    .mobile-panel .navlinks{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:10px;
+      background:var(--text);
+      position:absolute;
+      content:"";
     }
 
-    @media (max-width: 900px){
-      .nav > .nav-right > nav.navlinks{ display:none; }
-      .burger{ display:flex; }
-      header[data-open="true"] .mobile-panel{ display:block; }
-      .mobile-panel nav.navlinks{ display:flex; }
-      .brand img{ height: 96px; }
-    }
+    .burger span{position:relative;}
+    .burger span::before{top:-6px;}
+    .burger span::after{top:6px;}
 
-    @media (max-width: 860px){
-      .nav{
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-      }
-      .brand{ justify-content: center; }
-      .brand img{ height: 120px; }
-      .nav-right{
-        width:100%;
+    .mobile-panel{display:none;padding:10px 0 18px;}
+    header[data-open="true"] .mobile-panel{display:block;}
+
+    @media(max-width:900px){
+      .nav > .nav-right > nav.navlinks{display:none;}
+      .burger{display:flex;}
+      .brand img{height:120px;}
+      .mobile-panel .navlinks{
         display:flex;
-        justify-content: space-between;
-        align-items:center;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
       }
-      .nav > .nav-right > nav.navlinks{ display:none; }
-      .burger{ display:flex; }
-      header[data-open="true"] .mobile-panel{ display:block; }
-      .mobile-panel nav.navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
     }
 
-    /* =========================
-       PAGE — MENTIONS LÉGALES
-       ========================= */
-    main{ padding: 34px 0 84px; }
-    .page-hero{
-      padding: 34px 0 18px;
-    }
+    main{padding:34px 0 84px;}
+
+    .page-hero{padding:34px 0 18px;}
 
     .banner{
-      position:relative;
-      border-radius: 32px;
+      border-radius:32px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.45);
-      box-shadow: var(--shadow);
+      box-shadow:var(--shadow);
       background:
         radial-gradient(900px 520px at 18% 18%, rgba(127,167,122,.28), transparent 62%),
         radial-gradient(820px 520px at 92% 16%, rgba(48,87,24,.20), transparent 60%),
         linear-gradient(135deg, rgba(244,231,215,1), rgba(234,215,192,1));
     }
-    .banner::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.08) 55%, rgba(255,255,255,0));
-      pointer-events:none;
-    }
+
     .banner-inner{
-      position:relative;
-      padding: 38px 34px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
+      padding:38px 34px;
     }
+
     .headline{
       font-family:"Playfair Display", serif;
       font-weight:800;
-      font-size: clamp(30px, 3.2vw, 44px);
-      line-height: 1.1;
-      margin:0;
-      letter-spacing:.2px;
+      font-size:clamp(30px, 3.2vw, 44px);
+      line-height:1.1;
+      margin:0 0 10px;
     }
+
     .lead{
       margin:0;
-      font-size: 16px;
-      color: rgba(63,46,31,.86);
-      max-width: 72ch;
+      font-size:16px;
+      color:rgba(63,46,31,.86);
+      max-width:72ch;
     }
+
     .pill{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top: 6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
     }
+
     .tag{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding:10px 12px;
       border-radius:999px;
-      background: rgba(255,255,255,.35);
+      background:rgba(255,255,255,.35);
       border:1px solid var(--stroke);
-      box-shadow: 0 10px 22px rgba(63,46,31,.08);
       font-weight:700;
-      color: rgba(63,46,31,.92);
     }
+
     .dot{
-      width:9px; height:9px; border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:var(--accent);
     }
 
     .legal{
-      margin-top: 22px;
+      margin-top:22px;
       display:grid;
-      gap: 14px;
+      gap:14px;
     }
+
     .panel{
-      border-radius: var(--radius2);
+      border-radius:var(--radius2);
       border:1px solid var(--stroke);
-      background: rgba(255,255,255,.35);
-      box-shadow: 0 12px 28px rgba(63,46,31,.08);
-      padding: 18px;
+      background:rgba(255,255,255,.35);
+      box-shadow:0 12px 28px rgba(63,46,31,.08);
+      padding:18px;
     }
+
     .panel h2{
-      margin: 0 0 10px;
+      margin:0 0 10px;
       font-family:"Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing:.2px;
+      font-size:22px;
     }
-    .panel p{ margin: 0; color: rgba(63,46,31,.84); }
-    .panel p + p{ margin-top: 10px; }
+
+    .panel p{
+      margin:0;
+      color:rgba(63,46,31,.84);
+    }
+
+    .panel p + p{margin-top:10px;}
 
     .kv{
-      margin-top: 10px;
+      margin-top:10px;
       display:grid;
-      gap: 10px;
+      gap:10px;
     }
+
     .row{
       display:grid;
-      grid-template-columns: 180px 1fr;
-      gap: 12px;
-      padding: 12px 12px;
-      border-radius: 16px;
+      grid-template-columns:180px 1fr;
+      gap:12px;
+      padding:12px;
+      border-radius:16px;
       border:1px solid rgba(63,46,31,.14);
-      background: rgba(255,255,255,.25);
+      background:rgba(255,255,255,.25);
     }
+
     .k{
-      font-weight: 900;
-      color: rgba(63,46,31,.86);
+      font-weight:900;
     }
+
     .v{
-      color: rgba(63,46,31,.84);
-      word-break: break-word;
+      word-break:break-word;
+      color:rgba(63,46,31,.84);
     }
+
     .subnote{
-      margin-top: 10px;
-      font-size: 13px;
-      color: rgba(63,46,31,.72);
+      margin-top:10px;
+      font-size:13px;
+      color:rgba(63,46,31,.72);
     }
 
-    @media (max-width: 720px){
-      .row{ grid-template-columns: 1fr; }
+    @media(max-width:720px){
+      .row{grid-template-columns:1fr;}
     }
 
-    /* =========================
-       FOOTER PREMIUM (identique)
-       ========================= */
-.footer{
-  padding: 46px 0 36px;
-  border-top: 1px solid var(--stroke);
-  background:
-    radial-gradient(900px 380px at 18% 0%, rgba(127,167,122,.18), transparent 60%),
-    linear-gradient(180deg, rgba(244,231,215,.75), rgba(234,215,192,.92));
-}
+    .footer{
+      padding:46px 0 36px;
+      border-top:1px solid var(--stroke);
+      background:
+        radial-gradient(900px 380px at 18% 0%, rgba(127,167,122,.18), transparent 60%),
+        linear-gradient(180deg, rgba(244,231,215,.75), rgba(234,215,192,.92));
+    }
 
-.footer-wrap{
-  border:1px solid rgba(255,255,255,.55);
-  background: rgba(255,255,255,.26);
-  border-radius: 28px;
-  box-shadow: 0 18px 44px rgba(63,46,31,.12);
-  overflow:hidden;
-  position:relative;
-}
+    .footer-wrap{
+      border:1px solid rgba(255,255,255,.55);
+      background:rgba(255,255,255,.26);
+      border-radius:28px;
+      box-shadow:0 18px 44px rgba(63,46,31,.12);
+      overflow:hidden;
+    }
 
-.footer-wrap::before{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(90deg, rgba(255,255,255,.22), rgba(255,255,255,0) 55%);
-  pointer-events:none;
-}
+    .footer-inner{
+      padding:26px 22px;
+      display:grid;
+      grid-template-columns:1.2fr .9fr .9fr;
+      gap:18px;
+    }
 
-.footer-inner{
-  position:relative;
-  padding: 26px 22px;
-  display:grid;
-  grid-template-columns: 1.2fr .9fr .9fr;
-  gap: 18px;
-  align-items:start;
-}
+    .footer-title{
+      font-family:"Playfair Display", serif;
+      font-weight:800;
+      font-size:22px;
+      margin:0;
+    }
 
-.footer-brand{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
+    .footer-desc{
+      margin:10px 0;
+      color:rgba(63,46,31,.82);
+    }
 
-.footer-title{
-  font-family:"Playfair Display", serif;
-  font-weight:800;
-  font-size: 22px;
-  margin:0;
-  letter-spacing:.2px;
-}
+    .footer-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
 
-.footer-desc{
-  margin:0;
-  color: rgba(63,46,31,.82);
-  max-width: 52ch;
-}
+    .footer-badge,
+    .footer-links a,
+    .backtop{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.30);
+      border:1px solid var(--stroke);
+      font-weight:800;
+    }
 
-.footer-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top: 6px;
-}
+    .mini-dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:var(--accent);
+    }
 
-.footer-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-radius:999px;
-  background: rgba(255,255,255,.30);
-  border:1px solid var(--stroke);
-  box-shadow: 0 10px 22px rgba(63,46,31,.08);
-  font-weight:800;
-  color: rgba(63,46,31,.92);
-  font-size: 13px;
-}
+    .footer-col h4{
+      margin:2px 0 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      color:rgba(63,46,31,.78);
+    }
 
-.footer-badge .mini-dot{
-  width:9px; height:9px; border-radius:999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(48,87,24,.12);
-}
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
 
-.footer-col h4{
-  margin: 2px 0 10px;
-  font-size: 14px;
-  letter-spacing:.2px;
-  text-transform: uppercase;
-  color: rgba(63,46,31,.78);
-}
+    .social-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-.footer-links{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
+    .social-btn{
+      width:46px;
+      height:46px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      border:1px solid rgba(63,46,31,.16);
+      background:rgba(255,255,255,.28);
+    }
 
-.footer-links a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border:1px solid rgba(63,46,31,.14);
-  background: rgba(255,255,255,.25);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  font-weight: 800;
-}
+    .social-icon{
+      width:20px;
+      height:20px;
+    }
 
-.footer-links a:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.40);
-  border-color: rgba(48,87,24,.28);
-}
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:14px 22px 18px;
+      border-top:1px solid rgba(63,46,31,.10);
+    }
 
-.footer-links small{
-  color: rgba(63,46,31,.70);
-  font-weight: 600;
-}
-
-.social-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.social-btn{
-  width:46px; height:46px;
-  display:grid; place-items:center;
-  border-radius: 16px;
-  border:1px solid rgba(63,46,31,.16);
-  background: rgba(255,255,255,.28);
-  box-shadow: 0 12px 26px rgba(63,46,31,.10);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.social-btn:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.42);
-  border-color: rgba(48,87,24,.28);
-}
-
-.social-icon{
-  width:20px; height:20px;
-  display:block;
-}
-
-.footer-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  flex-wrap:wrap;
-  padding: 14px 22px 18px;
-  border-top: 1px solid rgba(63,46,31,.10);
-  background: rgba(255,255,255,.18);
-}
-
-.footer-bottom .note{ margin:0; }
-
-.backtop{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding: 10px 14px;
-  border-radius:999px;
-  border:1px solid rgba(63,46,31,.18);
-  background: rgba(255,255,255,.25);
-  font-weight: 900;
-  transition: transform .15s ease, background .15s ease;
-}
-
-.backtop:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.42);
-}
-
-@media (max-width: 980px){
-  .footer-inner{ grid-template-columns: 1fr; }
-  .footer-bottom{ flex-direction:column; align-items:flex-start; }
-}
+    @media(max-width:980px){
+      .footer-inner{grid-template-columns:1fr;}
+      .footer-bottom{flex-direction:column;align-items:flex-start;}
+    }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header id="top" data-open="false">
-    <div class="container">
-      <div class="nav">
 
-        <!-- LOGO À GAUCHE -->
-        <a class="brand" href="index.html" aria-label="Retour à l'accueil">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/logo_1ebad890-0583-442f-b853-314e9857f2e6.png?v=1770749843"
-            alt="Logo Beauté Mélisse"
-          />
-        </a>
+<header id="top" data-open="false">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/logo_1ebad890-0583-442f-b853-314e9857f2e6.png?v=1770749843" alt="Logo Beauté Mélisse">
+      </a>
 
-        <!-- DROITE : MENU + WHATSAPP -->
-        <div class="nav-right">
-          <nav class="navlinks">
-            <a href="index.html#prestations">Prestations</a>
-            <a href="index.html#histoire">Mon histoire</a>
-            <a href="index.html#avis">Avis</a>
-            <a href="index.html#contact">Contact</a>
-          </nav>
-
-          <a class="btn"
-             href="https://wa.me/33643896341?text=Bonjour%20Beaut%C3%A9%20M%C3%A9lisse%20%F0%9F%8C%BF%20Je%20souhaite%20prendre%20rendez-vous."
-             target="_blank" rel="noopener">
-            <span class="wa-dot"></span>
-            06 43 89 63 41
-          </a>
-
-          <button class="burger" id="burger" aria-label="Menu mobile">
-            <span></span>
-          </button>
-        </div>
-      </div>
-
-      <!-- MENU MOBILE -->
-      <div class="mobile-panel">
+      <div class="nav-right">
         <nav class="navlinks">
           <a href="index.html#prestations">Prestations</a>
           <a href="index.html#histoire">Mon histoire</a>
           <a href="index.html#avis">Avis</a>
-          <a href="index.html#faq">FAQ</a>
           <a href="index.html#contact">Contact</a>
         </nav>
 
-        <div style="margin-top:14px;">
-          <a class="btn" href="https://wa.me/33643896341" target="_blank" rel="noopener">
-            <span class="wa-dot"></span>
-            Contactez moi : 06 43 89 63 41
-          </a>
+        <a class="btn" href="https://wa.me/33643896341" target="_blank" rel="noopener">
+          <span class="wa-dot"></span>
+          06 43 89 63 41
+        </a>
+
+        <button class="burger" id="burger" aria-label="Menu mobile">
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-panel">
+      <nav class="navlinks">
+        <a href="index.html#prestations">Prestations</a>
+        <a href="index.html#histoire">Mon histoire</a>
+        <a href="index.html#avis">Avis</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="banner">
+      <div class="banner-inner">
+        <h1 class="headline">Politique de confidentialité</h1>
+        <p class="lead">
+          Cette page explique comment <strong>Beauté Mélisse</strong> collecte,
+          utilise et protège vos données personnelles lorsque vous utilisez ce site
+          ou contactez l’entreprise.
+        </p>
+
+        <div class="pill">
+          <a class="tag" href="#donnees"><span class="dot"></span>Données collectées</a>
+          <a class="tag" href="#droits"><span class="dot"></span>Vos droits</a>
+          <a class="tag" href="#contact"><span class="dot"></span>Contact</a>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="banner">
-        <div class="banner-inner">
-          <h1 class="headline">Mentions légales</h1>
-          <p class="lead">
-            Informations légales relatives au site <strong>Beauté Mélisse</strong>.
-            Pour toute question, vous pouvez me contacter via WhatsApp ou par e-mail.
-          </p>
-          <div class="pill" aria-label="Raccourcis">
-            <a class="tag" href="#editeur"><span class="dot"></span>Éditeur</a>
-            <a class="tag" href="#hebergeur"><span class="dot"></span>Hébergeur</a>
-            <a class="tag" href="#contact"><span class="dot"></span>Contact</a>
+<main>
+  <div class="container">
+    <div class="legal">
+
+      <div class="panel" id="intro">
+        <h2>1) Introduction</h2>
+        <p>
+          La présente politique de confidentialité a pour objectif d’informer les utilisateurs
+          du site <strong>Beauté Mélisse</strong> sur la manière dont leurs données personnelles
+          peuvent être collectées, utilisées et protégées.
+        </p>
+        <p>
+          En naviguant sur ce site ou en contactant Beauté Mélisse, vous acceptez les pratiques
+          décrites dans cette politique.
+        </p>
+      </div>
+
+      <div class="panel" id="responsable">
+        <h2>2) Responsable du traitement</h2>
+
+        <div class="kv">
+          <div class="row">
+            <div class="k">Nom commercial</div>
+            <div class="v"><strong>Beauté Mélisse</strong></div>
+          </div>
+
+          <div class="row">
+            <div class="k">Responsable</div>
+            <div class="v">[Prénom NOM]</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Adresse</div>
+            <div class="v">[Adresse professionnelle] — 83910 Pourrières</div>
+          </div>
+
+          <div class="row">
+            <div class="k">E-mail</div>
+            <div class="v">
+              <a href="mailto:info@beaute-melisse.com">
+                <strong>info@beaute-melisse.com</strong>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="k">Téléphone</div>
+            <div class="v">
+              <a href="tel:+33643896341">
+                <strong>06 43 89 63 41</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="subnote">
+          Pense à remplacer les informations entre crochets par les informations officielles.
+        </p>
+      </div>
+
+      <div class="panel" id="donnees">
+        <h2>3) Données personnelles collectées</h2>
+        <p>
+          Beauté Mélisse peut collecter certaines données personnelles lorsque vous contactez
+          l’entreprise ou utilisez le site.
+        </p>
+
+        <div class="kv">
+          <div class="row">
+            <div class="k">Identité</div>
+            <div class="v">Nom, prénom.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Contact</div>
+            <div class="v">Adresse e-mail, numéro de téléphone.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Messages</div>
+            <div class="v">Informations transmises par WhatsApp, e-mail ou formulaire de contact.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Navigation</div>
+            <div class="v">Adresse IP, navigateur, type d’appareil, pages consultées.</div>
           </div>
         </div>
       </div>
+
+      <div class="panel" id="finalites">
+        <h2>4) Finalités du traitement</h2>
+        <p>
+          Les données personnelles collectées peuvent être utilisées pour :
+        </p>
+
+        <div class="kv">
+          <div class="row">
+            <div class="k">Contact</div>
+            <div class="v">Répondre aux demandes envoyées par les utilisateurs.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Rendez-vous</div>
+            <div class="v">Organiser, confirmer ou modifier une prestation à domicile.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Suivi client</div>
+            <div class="v">Assurer le suivi des échanges et des prestations.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Amélioration</div>
+            <div class="v">Améliorer le site, son contenu et l’expérience utilisateur.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="base-legale">
+        <h2>5) Base légale du traitement</h2>
+        <p>
+          Les traitements de données reposent principalement sur le consentement de l’utilisateur,
+          l’exécution d’une demande ou d’une prestation, ainsi que l’intérêt légitime de Beauté Mélisse
+          à assurer le bon fonctionnement de son activité.
+        </p>
+      </div>
+
+      <div class="panel" id="conservation">
+        <h2>6) Durée de conservation</h2>
+        <p>
+          Les données personnelles sont conservées uniquement pendant la durée nécessaire aux finalités
+          pour lesquelles elles ont été collectées.
+        </p>
+        <p>
+          Certaines données peuvent être conservées plus longtemps lorsqu’une obligation légale ou
+          comptable l’impose.
+        </p>
+      </div>
+
+      <div class="panel" id="partage">
+        <h2>7) Partage des données</h2>
+        <p>
+          Les données personnelles ne sont ni vendues, ni louées, ni cédées à des tiers.
+        </p>
+        <p>
+          Elles peuvent toutefois être traitées par certains services nécessaires au fonctionnement
+          du site ou à la communication avec les clients, comme l’hébergeur du site, les services
+          de messagerie ou WhatsApp.
+        </p>
+      </div>
+
+      <div class="panel" id="cookies">
+        <h2>8) Cookies</h2>
+        <p>
+          Le site peut utiliser des cookies ou technologies similaires pour assurer son bon fonctionnement,
+          améliorer la navigation et mesurer l’audience.
+        </p>
+        <p>
+          Vous pouvez configurer votre navigateur pour bloquer ou supprimer les cookies.
+        </p>
+      </div>
+
+      <div class="panel" id="securite">
+        <h2>9) Sécurité des données</h2>
+        <p>
+          Beauté Mélisse met en œuvre des mesures raisonnables afin de protéger les données personnelles
+          contre l’accès non autorisé, la perte, l’altération ou la divulgation.
+        </p>
+      </div>
+
+      <div class="panel" id="droits">
+        <h2>10) Vos droits</h2>
+        <p>
+          Conformément au Règlement Général sur la Protection des Données, vous disposez de plusieurs droits
+          concernant vos données personnelles.
+        </p>
+
+        <div class="kv">
+          <div class="row">
+            <div class="k">Accès</div>
+            <div class="v">Demander l’accès aux données personnelles vous concernant.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Rectification</div>
+            <div class="v">Demander la correction de données inexactes ou incomplètes.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Suppression</div>
+            <div class="v">Demander la suppression de vos données personnelles.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Opposition</div>
+            <div class="v">Vous opposer à certains traitements de vos données.</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Limitation</div>
+            <div class="v">Demander la limitation temporaire du traitement de vos données.</div>
+          </div>
+        </div>
+
+        <p class="subnote">
+          Pour exercer vos droits, contactez Beauté Mélisse à l’adresse :
+          <strong>info@beaute-melisse.com</strong>.
+        </p>
+      </div>
+
+      <div class="panel" id="reclamation">
+        <h2>11) Réclamation</h2>
+        <p>
+          Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation
+          auprès de la CNIL, l’autorité française de protection des données personnelles.
+        </p>
+      </div>
+
+      <div class="panel" id="modification">
+        <h2>12) Modification de la politique</h2>
+        <p>
+          Beauté Mélisse se réserve le droit de modifier la présente politique de confidentialité
+          à tout moment afin de l’adapter aux évolutions légales, techniques ou commerciales.
+        </p>
+      </div>
+
+      <div class="panel" id="contact">
+        <h2>13) Contact</h2>
+        <p>
+          Pour toute question concernant cette politique de confidentialité ou vos données personnelles,
+          vous pouvez contacter Beauté Mélisse :
+        </p>
+
+        <div class="kv">
+          <div class="row">
+            <div class="k">WhatsApp</div>
+            <div class="v">
+              <a href="https://wa.me/33643896341" target="_blank" rel="noopener">
+                <strong>Écrire sur WhatsApp</strong>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="k">E-mail</div>
+            <div class="v">
+              <a href="mailto:info@beaute-melisse.com">
+                <strong>info@beaute-melisse.com</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</main>
 
-  <main>
-    <div class="container">
-      <div class="legal">
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrap">
 
-        <div class="panel" id="editeur">
-          <h2>1) Éditeur du site</h2>
-          <p>Le présent site est édité par :</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-title">Beauté Mélisse</p>
+          <p class="footer-desc">
+            Esthéticienne à domicile à <strong>Pourrières</strong> et alentours.
+            Soins naturels, gestes précis, et une attention particulière aux
+            <strong>peaux sensibles</strong>.
+          </p>
 
-          <div class="kv" role="list">
-            <div class="row" role="listitem">
-              <div class="k">Nom commercial</div>
-              <div class="v"><strong>Beauté Mélisse</strong></div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Responsable</div>
-              <div class="v">[Prénom NOM]</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Statut</div>
-              <div class="v">Entrepreneur individuel / Auto-entrepreneur (à compléter)</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">SIREN / SIRET</div>
-              <div class="v">[SIRET]</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Adresse</div>
-              <div class="v">[Adresse professionnelle] — 83910 Pourrières (à compléter)</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">E-mail</div>
-              <div class="v"><a href="mailto:info@beaute-melisse.com"><strong>info@beaute-melisse.com</strong></a></div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Téléphone</div>
-              <div class="v"><a href="tel:+33643896341"><strong>06 43 89 63 41</strong></a></div>
-            </div>
+          <div class="footer-badges">
+            <a class="footer-badge" href="tel:+33643896341">
+              <span class="mini-dot"></span>
+              06 43 89 63 41
+            </a>
+
+            <a class="footer-badge" href="mailto:info@beaute-melisse.com">
+              <span class="mini-dot"></span>
+              info@beaute-melisse.com
+            </a>
+
+            <a class="footer-badge" href="https://wa.me/33643896341" target="_blank" rel="noopener">
+              <span class="mini-dot"></span>
+              WhatsApp direct
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Informations</h4>
+          <div class="footer-links">
+            <a href="mentions-legales.html">Mentions légales <small>↗</small></a>
+            <a href="politique-confidentialite.html">Politique de confidentialité <small>↗</small></a>
+            <a href="cgv.html">CGV / Prestations <small>↗</small></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Réseaux</h4>
+          <div class="social-row">
+            <a class="social-btn" href="TON_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </a>
+
+            <a class="social-btn" href="TON_FACEBOOK" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/>
+              </svg>
+            </a>
+
+            <a class="social-btn" href="TON_TIKTOK" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M14 3v11.2a3.8 3.8 0 1 1-3-3.7V7.2a7.1 7.1 0 1 0 6 7V8.7c1.1.8 2.5 1.3 4 1.3V6.8c-2 0-3.7-1.6-4-3.8H14Z" fill="currentColor"/>
+              </svg>
+            </a>
           </div>
 
           <p class="subnote">
-            Remplace les champs entre crochets par tes informations officielles (SIRET, adresse, nom).
+            Pour un rendez-vous rapide : WhatsApp reste le plus simple.
           </p>
         </div>
-
-        <div class="panel" id="hebergeur">
-          <h2>2) Hébergement</h2>
-          <p>Le site est hébergé par :</p>
-
-          <div class="kv" role="list">
-            <div class="row" role="listitem">
-              <div class="k">Hébergeur</div>
-              <div class="v">GitHub Pages (GitHub, Inc.)</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Adresse</div>
-              <div class="v">88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">Site web</div>
-              <div class="v"><a href="https://pages.github.com/" target="_blank" rel="noopener"><strong>pages.github.com</strong></a></div>
-            </div>
-          </div>
-
-          <p class="subnote">
-            Si tu changes d’hébergement (ex : Shopify, OVH, etc.), remplace cette section.
-          </p>
-        </div>
-
-        <div class="panel" id="propriete">
-          <h2>3) Propriété intellectuelle</h2>
-          <p>
-            L’ensemble des contenus présents sur ce site (textes, visuels, logos, images, éléments graphiques)
-            est protégé par le droit d’auteur. Toute reproduction, représentation, modification, publication,
-            adaptation de tout ou partie du site, quel que soit le moyen ou le procédé utilisé, est interdite,
-            sauf autorisation écrite préalable.
-          </p>
-        </div>
-
-        <div class="panel" id="responsabilite">
-          <h2>4) Responsabilité</h2>
-          <p>
-            Les informations fournies sur ce site le sont à titre indicatif. Malgré le soin apporté à leur mise à jour,
-            des erreurs ou omissions peuvent survenir. L’éditeur ne saurait être tenu responsable de l’utilisation faite
-            des informations disponibles sur le site.
-          </p>
-          <p>
-            Le site peut contenir des liens vers d’autres sites. L’éditeur ne peut être tenu responsable du contenu,
-            des politiques ou des pratiques de ces sites tiers.
-          </p>
-        </div>
-
-        <div class="panel" id="donnees">
-          <h2>5) Données personnelles</h2>
-          <p>
-            Pour en savoir plus sur la collecte et le traitement des données personnelles, veuillez consulter la
-            page <a href="politique-confidentialite.html"><strong>Politique de confidentialité</strong></a>.
-          </p>
-        </div>
-
-        <div class="panel" id="contact">
-          <h2>6) Contact</h2>
-          <p>
-            Pour toute question relative au site, vous pouvez contacter Beauté Mélisse :
-          </p>
-          <div class="kv" role="list">
-            <div class="row" role="listitem">
-              <div class="k">WhatsApp</div>
-              <div class="v">
-                <a href="https://wa.me/33643896341?text=Bonjour%20Beaut%C3%A9%20M%C3%A9lisse%20%F0%9F%8C%BF%20J%27ai%20une%20question%20concernant%20votre%20site."
-                   target="_blank" rel="noopener"><strong>Écrire sur WhatsApp</strong></a>
-              </div>
-            </div>
-            <div class="row" role="listitem">
-              <div class="k">E-mail</div>
-              <div class="v"><a href="mailto:info@beaute-melisse.com"><strong>info@beaute-melisse.com</strong></a></div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wrap">
+      <div class="footer-bottom">
+        <p class="subnote">
+          © <span id="year"></span> <strong>Beauté Mélisse</strong> — Tous droits réservés
+        </p>
 
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <p class="footer-title">Beauté Mélisse</p>
-            <p class="footer-desc">
-              Esthéticienne à domicile à <strong>Pourrières</strong> et alentours.
-              Soins naturels, gestes précis, et une attention particulière aux <strong>peaux sensibles</strong>.
-            </p>
-
-            <div class="footer-badges" aria-label="Contact rapide">
-              <a class="footer-badge" href="tel:+33643896341">
-                <span class="mini-dot" aria-hidden="true"></span>
-                06 43 89 63 41
-              </a>
-              <a class="footer-badge" href="mailto:info@beaute-melisse.com">
-                <span class="mini-dot" aria-hidden="true"></span>
-                info@beaute-melisse.com
-              </a>
-              <a class="footer-badge" href="https://wa.me/33643896341" target="_blank" rel="noopener">
-                <span class="mini-dot" aria-hidden="true"></span>
-                WhatsApp direct
-              </a>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h4>Informations</h4>
-            <div class="footer-links">
-              <a href="mentions-legales.html">Mentions légales <small>↗</small></a>
-              <a href="politique-confidentialite.html">Politique de confidentialité <small>↗</small></a>
-              <a href="cgv.html">CGV / Prestations <small>↗</small></a>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h4>Réseaux</h4>
-            <div class="social-row" aria-label="Réseaux sociaux">
-              <a class="social-btn" href="TON_INSTAGRAM" target="_blank" rel="noopener" aria-label="Instagram">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                </svg>
-              </a>
-
-              <a class="social-btn" href="TON_FACEBOOK" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/>
-                </svg>
-              </a>
-
-              <a class="social-btn" href="TON_TIKTOK" target="_blank" rel="noopener" aria-label="TikTok">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 3v11.2a3.8 3.8 0 1 1-3-3.7V7.2a7.1 7.1 0 1 0 6 7V8.7c1.1.8 2.5 1.3 4 1.3V6.8c-2 0-3.7-1.6-4-3.8H14Z" fill="currentColor"/>
-                </svg>
-              </a>
-            </div>
-
-            <p class="subnote" style="margin-top:12px;">
-              Pour un rendez-vous rapide : WhatsApp reste le plus simple.
-            </p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p class="subnote">
-            © <span id="year"></span> <strong>Beauté Mélisse</strong> — Tous droits réservés
-          </p>
-
-          <a class="backtop" href="#top" aria-label="Retour en haut">
-            ↑ Haut de page
-          </a>
-        </div>
-
+        <a class="backtop" href="#top">
+          ↑ Haut de page
+        </a>
       </div>
+
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    const header = document.querySelector("header");
-    const burger = document.getElementById("burger");
+  const header = document.querySelector("header");
+  const burger = document.getElementById("burger");
 
-    function setOpen(isOpen){
-      header.dataset.open = isOpen ? "true" : "false";
-      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    }
+  function setOpen(isOpen){
+    header.dataset.open = isOpen ? "true" : "false";
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
 
-    burger.addEventListener("click", () => {
-      const isOpen = header.dataset.open === "true";
-      setOpen(!isOpen);
-    });
+  burger.addEventListener("click", () => {
+    const isOpen = header.dataset.open === "true";
+    setOpen(!isOpen);
+  });
 
-    // Ferme si on repasse en desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 860) setOpen(false);
-    });
-  </script>
+  window.addEventListener("resize", () => {
+    if(window.innerWidth > 860) setOpen(false);
+  });
+</script>
+
 </body>
 </html>
