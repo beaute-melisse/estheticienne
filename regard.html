@@ -1,10 +1,10 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Élégance & Douceur des Jambes — Tarifs Épilation</title>
+
   <style>
     :root{
       --text: #3f2e1f;
@@ -14,16 +14,21 @@
       --btn-text: #ffffff;
       --bg: #f4e7d7;
       --bg2: #ead7c0;
-      --card: rgba(255,255,255,.58);
+      --card: rgba(255,255,255,.62);
       --stroke: rgba(63,46,31,.18);
       --shadow: 0 14px 35px rgba(63,46,31,.15);
       --radius: 18px;
       --radius2: 26px;
       --max: 1120px;
-      --shine: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.12));
+
+      /* IMPORTANT: le bug venait surtout de ce masque/shine qui peut casser l'affichage sur certains navigateurs */
+      --shine: radial-gradient(700px 280px at 15% 10%, rgba(255,255,255,.55), transparent 60%);
     }
 
     *{box-sizing:border-box}
+    img{max-width:100%; height:auto;}
+
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
@@ -38,9 +43,136 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 26px 18px 70px;
+      padding: 18px 18px 70px;
     }
 
+    /* =========================
+   HEADER (logo grand + marge faible)
+   ========================= */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(244,231,215,.88);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.nav-wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;        /* ← retire presque toute la marge */
+  height: 95px;           /* ← hauteur FIXE du header */
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+/* conteneur logo */
+.brand{
+  display:flex;
+  align-items:center;
+  height:100%;
+  overflow:hidden;        /* ← coupe le vide du PNG */
+}
+
+/* logo */
+.brand img{
+  height: 150px;          /* plus grand que le header */
+  display:block;
+  filter: drop-shadow(0 8px 18px rgba(63,46,31,.15));
+}
+
+
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-link, .dropbtn{
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 850;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  transition: .18s ease;
+}
+
+.nav-link:hover, .dropbtn:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
+
+/* Dropdown */
+.dropdown{ position: relative; }
+
+.caret{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  opacity: .85;
+}
+
+.dropdown-menu{
+  position:absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.85);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  display: none;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 750;
+  border: 1px solid transparent;
+  transition: .15s ease;
+}
+
+.dropdown-menu a:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
+
+.dropdown.is-open .dropdown-menu{ display:block; }
+
+/* Mobile */
+@media (max-width: 720px){
+  .nav-wrap{ padding: 6px 14px; gap: 10px; }
+  .brand img{
+    height: 70px;
+    transform: scale(1.04);
+  }
+  .dropdown-menu{ left: 0; right: 0; min-width: unset; }
+}
+
+
+    /* CARD SYSTEM */
     .card{
       background: var(--card);
       border: 1px solid var(--stroke);
@@ -50,13 +182,19 @@
       overflow:hidden;
       position:relative;
     }
+    /* FIX: pseudo-element ne doit JAMAIS passer au-dessus du contenu */
     .card::before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute;
+      inset:0;
       background: var(--shine);
-      opacity:.35;
       pointer-events:none;
-      mask: radial-gradient(650px 260px at 18% 10%, #000 0%, transparent 60%);
+      z-index:0;        /* <-- clé */
+    }
+    /* FIX: tout le contenu des cards passe au-dessus */
+    .card > *{
+      position: relative;
+      z-index: 1;       /* <-- clé */
     }
 
     /* HERO */
@@ -64,7 +202,7 @@
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 18px;
-      margin-top: 10px;
+      margin-top: 18px;
       align-items: stretch;
     }
     @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
@@ -97,7 +235,6 @@
       opacity: .92;
       max-width: 64ch;
     }
-
     .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .pill{
       display:inline-flex;
@@ -114,20 +251,20 @@
     .imgbox{
       border-radius: var(--radius2);
       overflow:hidden;
-      min-height:280px;
+      min-height: 320px;
       border: 1px solid rgba(63,46,31,.12);
       box-shadow: 0 10px 28px rgba(63,46,31,.10);
       background: rgba(255,255,255,.25);
     }
+    /* FIX: éviter que l'image prenne une hauteur incohérente */
     .imgbox img{
       width:100%;
-      height:100%;
+      height: 320px;
       object-fit: cover;
       display:block;
-      transform: scale(1.02);
     }
 
-    /* SECTION HEADERS */
+    /* SECTIONS */
     .section{ margin-top: 26px; }
     .section-head{
       display:flex;
@@ -146,7 +283,7 @@
       padding: 14px 14px 14px 16px;
       border-radius: var(--radius2);
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.38);
+      background: rgba(255,255,255,.40);
       box-shadow: 0 12px 30px rgba(63,46,31,.10);
       overflow:hidden;
       position:relative;
@@ -186,7 +323,7 @@
       display:block;
     }
 
-    /* GRID & CARDS */
+    /* GRID & SERVICES */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -262,181 +399,64 @@
       background: rgba(63,46,31,.12);
       margin: 12px 0;
     }
-    .note p{ margin: 0 0 10px; }
-    .note p:last-child{ margin:0; }
-    .note strong{ color: var(--btn-dark); }
-
-   /* HEADER (logo grand + dropdown) */
-  .site-header{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    backdrop-filter: blur(12px);
-    background: rgba(244,231,215,.80);
-    border-bottom: 1px solid var(--stroke);
-  }
-
-  .nav-wrap{
-    max-width: var(--max);
-    margin: auto;
-    padding: 12px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    gap: 12px;
-    text-decoration:none;
-    color: inherit;
-  }
-
-  .brand img{
-    height: 78px;              /* LOGO PLUS GRAND */
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 16px rgba(63,46,31,.16));
-  }
-
-  .menu{
-    display:flex;
-    align-items:center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .menu a, .dropbtn{
-    text-decoration:none;
-    color: var(--text);
-    font-weight: 750;
-    padding: 10px 14px;
-    border-radius: 999px;
-    transition: .18s ease;
-    border: 1px solid transparent;
-    background: transparent;
-    cursor: pointer;
-    font: inherit;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-
-  .menu a:hover, .dropbtn:hover{
-    background: rgba(127,167,122,.18);
-    color: var(--accent);
-    border-color: rgba(48,87,24,.18);
-  }
-
-  /* Dropdown */
-  .dropdown{
-    position: relative;
-  }
-
-  .dropdown .caret{
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: rotate(45deg);
-    margin-top: -2px;
-    opacity: .85;
-  }
-
-  .dropdown-menu{
-    position:absolute;
-    right: 0;
-    top: calc(100% + 10px);
-    min-width: 220px;
-    background: rgba(255,255,255,.72);
-    border: 1px solid var(--stroke);
-    box-shadow: var(--shadow);
-    border-radius: 18px;
-    padding: 10px;
-    display:none;
-    backdrop-filter: blur(10px);
-  }
-
-  .dropdown-menu a{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width:100%;
-    padding: 10px 12px;
-    border-radius: 14px;
-    font-weight: 700;
-    color: var(--text);
-    border: 1px solid transparent;
-  }
-
-  .dropdown-menu a:hover{
-    background: rgba(127,167,122,.18);
-    color: var(--accent);
-    border-color: rgba(48,87,24,.18);
-  }
-
-  .dropdown:hover .dropdown-menu,
-  .dropdown:focus-within .dropdown-menu{
-    display:block;
-  }
-
-  .tag{
-    font-size: .8rem;
-    padding: 4px 8px;
-    border-radius: 999px;
-    background: rgba(67,41,12,.08);
-    border: 1px solid rgba(67,41,12,.14);
-    opacity:.9;
-  }
-
-  /* Mobile */
-  @media (max-width: 720px){
-    .brand img{ height: 64px; }
-    .menu{ gap: 8px; }
-    .menu a, .dropbtn{ padding: 9px 12px; }
-    .dropdown-menu{ right: 0; left: 0; min-width: unset; }
-  }
   </style>
 </head>
 
 <body>
+  <div id="top"></div>
+
   <header class="site-header">
-  <div class="nav-wrap">
-    
-    <div class="logo">
-      <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623" alt="Logo Beauté">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623"
+          alt="Logo"
+          loading="lazy"
+        />
+      </a>
+
+      <nav class="menu" aria-label="Navigation principale">
+        <a class="nav-link" href="https://killevent.github.io/tests/">Accueil</a>
+
+        <div class="dropdown" id="tarifsDropdown">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" id="tarifsBtn">
+            Tarifs <span class="caret" aria-hidden="true"></span>
+          </button>
+
+          <div class="dropdown-menu" role="menu" aria-labelledby="tarifsBtn">
+            <a href="https://killevent.github.io/tests/beaute-des-ongles.html" role="menuitem">Beauté Ongles</a>
+            <a href="https://killevent.github.io/tests/soins-visage" target="_blank" rel="noopener" role="menuitem">Soins Visage</a>
+          </div>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <nav class="menu">
-      <a href="#">Accueil</a>
-      <a href="#ongles">Tarifs Ongles</a>
-      <a href="#visage">Épilations Visage</a>
-      <a href="#corps">Épilations Corps</a>
-      <a href="#forfaits">Forfaits</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <div class="wrap">
+    <header class="hero">
+      <div class="card hero-left">
+        <div class="badge"><i></i> Épilation • Tarifs</div>
+        <h1>Élégance & Douceur</h1>
+        <p class="sub">
+          Des prestations claires et une épilation soignée, pour une peau douce et un résultat net.
+          Choisissez votre zone (visage ou corps) ou optez pour un forfait avantageux.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Cire <b>PERRON RIGOT</b> — fabriquée en France</span>
+          <span class="pill">Fin de soin : huile nourrissante ou crème hypoallergénique</span>
+        </div>
+      </div>
 
-  </div>
-<<header class="site-header">
-  <div class="nav-wrap">
-    
-    <div class="logo">
-      <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623" alt="Logo Beauté">
-    </div>
-
-    <nav class="menu">
-      <a href="#">Accueil</a>
-      <a href="#ongles">Tarifs Ongles</a>
-      <a href="#visage">Épilations Visage</a>
-      <a href="#corps">Épilations Corps</a>
-      <a href="#forfaits">Forfaits</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-  </div>
-</header>
+      <aside class="card hero-right">
+        <div class="imgbox">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
+            alt="Élégance et douceur des jambes"
+            loading="lazy"
+          />
+        </div>
+      </aside>
+    </header>
 
     <!-- SECTION: VISAGE -->
     <section class="section" id="visage">
@@ -480,9 +500,7 @@
             <li class="row"><b>Joues / visage</b><span>Inclus</span></li>
           </ul>
 
-          <p class="hint">
-            Le combo complet pour un visage harmonieux : sourcils + lèvre/menton + joues.
-          </p>
+          <p class="hint">Le combo complet : sourcils + lèvre/menton + joues.</p>
         </section>
       </div>
     </section>
@@ -518,7 +536,7 @@
             <li class="row"><b>Maillot intégral (SIF)</b><span>25€</span></li>
           </ul>
 
-          <p class="hint">Pour les zones “maillot”, la prestation est réalisée avec soin et discrétion.</p>
+          <p class="hint">Prestation réalisée avec soin et discrétion.</p>
         </section>
 
         <section class="card service">
@@ -551,7 +569,7 @@
             <li class="row"><b>Fesses</b><span>5€</span></li>
           </ul>
 
-          <p class="hint">Pour toute zone non listée, n’hésitez pas à demander : on s’adapte.</p>
+          <p class="hint">Pour toute zone non listée, n’hésitez pas à demander.</p>
         </section>
       </div>
     </section>
@@ -584,7 +602,7 @@
             <li class="row"><b>Aisselles + maillot intégral + demi-jambes</b><span>45€</span></li>
           </ul>
 
-          <p class="hint">Le pack le plus demandé pour une routine d’entretien simple et efficace.</p>
+          <p class="hint">Le pack le plus demandé pour une routine simple et efficace.</p>
         </section>
 
         <section class="card service">
@@ -600,7 +618,7 @@
             <li class="row"><b>Aisselles + maillot intégral + jambes complètes</b><span>52€</span></li>
           </ul>
 
-          <p class="hint">Pour un résultat complet : jambes entières + zone sensible + aisselles.</p>
+          <p class="hint">Pour un résultat complet : jambes + zone sensible + aisselles.</p>
         </section>
       </div>
     </section>
@@ -634,7 +652,28 @@
         </section>
       </div>
     </section>
-
   </div>
+
+  <script>
+    (function(){
+      const dd = document.getElementById('tarifsDropdown');
+      const btn = document.getElementById('tarifsBtn');
+
+      function closeDropdown(){
+        dd.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = dd.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', closeDropdown);
+      dd.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDropdown));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdown(); });
+    })();
+  </script>
 </body>
 </html>
