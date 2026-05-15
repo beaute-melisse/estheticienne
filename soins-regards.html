@@ -1,0 +1,640 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Élégance & Douceur des Jambes — Tarifs Épilation</title>
+  <style>
+    :root{
+      --text: #3f2e1f;
+      --accent: #305718;
+      --btn: #7fa77a;
+      --btn-dark: #43290c;
+      --btn-text: #ffffff;
+      --bg: #f4e7d7;
+      --bg2: #ead7c0;
+      --card: rgba(255,255,255,.58);
+      --stroke: rgba(63,46,31,.18);
+      --shadow: 0 14px 35px rgba(63,46,31,.15);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --shine: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.12));
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 12%, rgba(127,167,122,.22), transparent 55%),
+        radial-gradient(1100px 650px at 82% 18%, rgba(67,41,12,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height:1.55;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 18px 70px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: var(--shine);
+      opacity:.35;
+      pointer-events:none;
+      mask: radial-gradient(650px 260px at 18% 10%, #000 0%, transparent 60%);
+    }
+
+    /* HERO */
+    header.hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
+
+    .hero-left{ padding: 26px 24px 22px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(48,87,24,.28);
+      background: rgba(127,167,122,.18);
+      font-weight: 750;
+      letter-spacing:.2px;
+      width: fit-content;
+    }
+    .badge i{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
+    }
+    h1{
+      margin: 12px 0 10px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.4px;
+    }
+    .sub{
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      opacity: .92;
+      max-width: 64ch;
+    }
+
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px dashed rgba(63,46,31,.22);
+      background: rgba(255,255,255,.28);
+      font-size: .95rem;
+    }
+
+    .hero-right{ padding:18px; }
+    .imgbox{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      min-height:280px;
+      border: 1px solid rgba(63,46,31,.12);
+      box-shadow: 0 10px 28px rgba(63,46,31,.10);
+      background: rgba(255,255,255,.25);
+    }
+    .imgbox img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+    }
+
+    /* SECTION HEADERS */
+    .section{ margin-top: 26px; }
+    .section-head{
+      display:flex;
+      align-items: stretch;
+      gap: 12px;
+      margin: 18px 0 12px;
+    }
+    @media (max-width: 720px){ .section-head{flex-direction:column;} }
+
+    .section-banner{
+      flex: 1;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 14px 14px 16px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.38);
+      box-shadow: 0 12px 30px rgba(63,46,31,.10);
+      overflow:hidden;
+      position:relative;
+    }
+    .section-banner::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(650px 260px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
+      pointer-events:none;
+    }
+    .section-title{
+      margin:0;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing:-.2px;
+    }
+    .section-sub{
+      margin: 2px 0 0;
+      opacity:.85;
+      font-size:.95rem;
+    }
+    .section-media{
+      width: 110px;
+      min-width:110px;
+      height: 74px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.22);
+      box-shadow: 0 10px 20px rgba(63,46,31,.10);
+      z-index:1;
+    }
+    .section-media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    /* GRID & CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .service{
+      grid-column: span 6;
+      padding: 16px 16px 14px;
+      border-radius: var(--radius2);
+      display:flex;
+      flex-direction:column;
+      height: 100%;
+      transition: transform .12s ease, filter .15s ease;
+    }
+    .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
+    @media (max-width: 920px){ .service{ grid-column: span 12; } }
+
+    .service-head{
+      display:flex;
+      justify-content: space-between;
+      gap:10px;
+      margin-bottom: 8px;
+      align-items:flex-start;
+    }
+    .service h3{
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.25;
+      letter-spacing:-.1px;
+    }
+    .price{
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(48,87,24,.12);
+      border: 1px solid rgba(48,87,24,.18);
+      font-weight: 900;
+      white-space:nowrap;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .row{
+      display:flex;
+      align-items:baseline;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.30);
+    }
+    .row b{ font-weight: 750; }
+    .row span{ font-weight: 900; }
+
+    .hint{
+      margin-top:auto;
+      padding-top: 10px;
+      font-size:.95rem;
+      opacity:.9;
+    }
+
+    .note{
+      grid-column: span 12;
+      padding: 16px;
+    }
+    .divider{
+      height:1px;
+      background: rgba(63,46,31,.12);
+      margin: 12px 0;
+    }
+    .note p{ margin: 0 0 10px; }
+    .note p:last-child{ margin:0; }
+    .note strong{ color: var(--btn-dark); }
+
+   /* HEADER (logo grand + dropdown) */
+  .site-header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(244,231,215,.80);
+    border-bottom: 1px solid var(--stroke);
+  }
+
+  .nav-wrap{
+    max-width: var(--max);
+    margin: auto;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    text-decoration:none;
+    color: inherit;
+  }
+
+  .brand img{
+    height: 78px;              /* LOGO PLUS GRAND */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(63,46,31,.16));
+  }
+
+  .menu{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .menu a, .dropbtn{
+    text-decoration:none;
+    color: var(--text);
+    font-weight: 750;
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: .18s ease;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .menu a:hover, .dropbtn:hover{
+    background: rgba(127,167,122,.18);
+    color: var(--accent);
+    border-color: rgba(48,87,24,.18);
+  }
+
+  /* Dropdown */
+  .dropdown{
+    position: relative;
+  }
+
+  .dropdown .caret{
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -2px;
+    opacity: .85;
+  }
+
+  .dropdown-menu{
+    position:absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 220px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid var(--stroke);
+    box-shadow: var(--shadow);
+    border-radius: 18px;
+    padding: 10px;
+    display:none;
+    backdrop-filter: blur(10px);
+  }
+
+  .dropdown-menu a{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    padding: 10px 12px;
+    border-radius: 14px;
+    font-weight: 700;
+    color: var(--text);
+    border: 1px solid transparent;
+  }
+
+  .dropdown-menu a:hover{
+    background: rgba(127,167,122,.18);
+    color: var(--accent);
+    border-color: rgba(48,87,24,.18);
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu{
+    display:block;
+  }
+
+  .tag{
+    font-size: .8rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(67,41,12,.08);
+    border: 1px solid rgba(67,41,12,.14);
+    opacity:.9;
+  }
+
+  /* Mobile */
+  @media (max-width: 720px){
+    .brand img{ height: 64px; }
+    .menu{ gap: 8px; }
+    .menu a, .dropbtn{ padding: 9px 12px; }
+    .dropdown-menu{ right: 0; left: 0; min-width: unset; }
+  }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="nav-wrap">
+    
+    <div class="logo">
+      <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623" alt="Logo Beauté">
+    </div>
+
+    <nav class="menu">
+      <a href="#">Accueil</a>
+      <a href="#ongles">Tarifs Ongles</a>
+      <a href="#visage">Épilations Visage</a>
+      <a href="#corps">Épilations Corps</a>
+      <a href="#forfaits">Forfaits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+<<header class="site-header">
+  <div class="nav-wrap">
+    
+    <div class="logo">
+      <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623" alt="Logo Beauté">
+    </div>
+
+    <nav class="menu">
+      <a href="#">Accueil</a>
+      <a href="#ongles">Tarifs Ongles</a>
+      <a href="#visage">Épilations Visage</a>
+      <a href="#corps">Épilations Corps</a>
+      <a href="#forfaits">Forfaits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+    <!-- SECTION: VISAGE -->
+    <section class="section" id="visage">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Épilation visage</h2>
+            <p class="section-sub">Des finitions nettes et naturelles, adaptées aux zones délicates.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Zones visage</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Joues / visage</b><span>5€</span></li>
+            <li class="row"><b>Menton / Lèvre</b><span>7€</span></li>
+            <li class="row"><b>Sourcils</b><span>7€</span></li>
+          </ul>
+
+          <p class="hint">Idéal pour un entretien régulier ou une retouche express avant un événement.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfait visage</h3>
+            <div class="price">16€</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Sourcils</b><span>Inclus</span></li>
+            <li class="row"><b>Lèvre / menton</b><span>Inclus</span></li>
+            <li class="row"><b>Joues / visage</b><span>Inclus</span></li>
+          </ul>
+
+          <p class="hint">
+            Le combo complet pour un visage harmonieux : sourcils + lèvre/menton + joues.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <!-- SECTION: CORPS -->
+    <section class="section" id="corps">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Épilation corps</h2>
+            <p class="section-sub">Choisissez votre zone : bras, jambes, aisselles, maillot…</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Zones corps</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Aisselles</b><span>8€</span></li>
+            <li class="row"><b>Demi-bras</b><span>9€</span></li>
+            <li class="row"><b>Bras entier</b><span>13€</span></li>
+            <li class="row"><b>Maillot simple</b><span>10€</span></li>
+            <li class="row"><b>Maillot échancré</b><span>15€</span></li>
+            <li class="row"><b>Maillot semi intégral</b><span>20€</span></li>
+            <li class="row"><b>Maillot intégral (SIF)</b><span>25€</span></li>
+          </ul>
+
+          <p class="hint">Pour les zones “maillot”, la prestation est réalisée avec soin et discrétion.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Jambes</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Demi-jambes</b><span>15€</span></li>
+            <li class="row"><b>Cuisses</b><span>15€</span></li>
+            <li class="row"><b>3/4 jambes</b><span>19€</span></li>
+            <li class="row"><b>Jambes entières</b><span>22€</span></li>
+          </ul>
+
+          <p class="hint">Un rendu net et uniforme, idéal pour une peau douce plus longtemps.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Autres zones</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Nez</b><span>3€</span></li>
+            <li class="row"><b>SIF</b><span>3€</span></li>
+            <li class="row"><b>Ventre</b><span>5€</span></li>
+            <li class="row"><b>Dos</b><span>5€</span></li>
+            <li class="row"><b>Fesses</b><span>5€</span></li>
+          </ul>
+
+          <p class="hint">Pour toute zone non listée, n’hésitez pas à demander : on s’adapte.</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- SECTION: FORFAITS -->
+    <section class="section" id="forfaits">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Forfaits corps</h2>
+            <p class="section-sub">Des packs clairs et avantageux, pour un résultat complet.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfaits avec demi-jambes</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Aisselles + maillot simple + demi-jambes</b><span>30€</span></li>
+            <li class="row"><b>Aisselles + maillot échancré + demi-jambes</b><span>35€</span></li>
+            <li class="row"><b>Aisselles + maillot semi intégral + demi-jambes</b><span>40€</span></li>
+            <li class="row"><b>Aisselles + maillot intégral + demi-jambes</b><span>45€</span></li>
+          </ul>
+
+          <p class="hint">Le pack le plus demandé pour une routine d’entretien simple et efficace.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Forfaits avec jambes complètes</h3>
+            <div class="price">Tarifs</div>
+          </div>
+
+          <ul class="list">
+            <li class="row"><b>Aisselles + maillot simple + jambes complètes</b><span>37€</span></li>
+            <li class="row"><b>Aisselles + maillot échancré + jambes complètes</b><span>42€</span></li>
+            <li class="row"><b>Aisselles + maillot semi intégral + jambes complètes</b><span>47€</span></li>
+            <li class="row"><b>Aisselles + maillot intégral + jambes complètes</b><span>52€</span></li>
+          </ul>
+
+          <p class="hint">Pour un résultat complet : jambes entières + zone sensible + aisselles.</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- SECTION: QUALITÉ & SOIN -->
+    <section class="section" id="qualite">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Qualité & confort</h2>
+            <p class="section-sub">Des produits pro, et une finition douce après chaque épilation.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="note card">
+          <p>
+            Je me sers exclusivement de la <strong>Cire PERRON RIGOT</strong>, produit fabriqué en France,
+            pour vous assurer une épilation de qualité professionnelle.
+          </p>
+          <div class="divider"></div>
+          <p>
+            Après épilation : huile nourrissante ou crème hydratante hypoallergénique,
+            composée uniquement des ingrédients nécessaires à votre peau.
+            <strong>Sans conservateur, ni parfum</strong> — idéal pour apaiser la peau.
+          </p>
+        </section>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
