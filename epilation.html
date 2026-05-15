@@ -406,23 +406,53 @@
 <body>
   <div id="top"></div>
 
-   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#top" aria-label="Accueil">
-        <img
-          src="https://beaute-melisse.github.io/estheticienne/logo.png"
-          alt="Logo"
-          loading="lazy"
-        />
+<header class="site-header" style="
+  background: #fff;
+  padding: 12px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+">
+  <div class="nav-wrap" style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+  ">
+
+    <a class="brand" href="#top" aria-label="Accueil">
+      <img
+        src="https://beaute-melisse.github.io/estheticienne/logo.png"
+        alt="Logo"
+        loading="lazy"
+        style="
+          height: 70px;
+          filter:
+            drop-shadow(0 0 0 #000)
+            drop-shadow(1px 0 0 #000)
+            drop-shadow(-1px 0 0 #000)
+            drop-shadow(0 1px 0 #000)
+            drop-shadow(0 -1px 0 #000);
+        "
+      />
+    </a>
+
+    <nav class="menu" aria-label="Navigation principale">
+      <a
+        class="nav-link"
+        href="https://beaute-melisse.github.io/estheticienne/"
+        style="
+          text-decoration: none;
+          color: #111;
+          font-weight: 600;
+          font-size: 16px;
+        "
+      >
+        Accueil
       </a>
+    </nav>
 
-      <nav class="menu" aria-label="Navigation principale">
-        <a class="nav-link" href="https://beaute-melisse.github.io/estheticienne/">Accueil</a>
-
-    
-      </nav>
-    </div>
-  </header>
+  </div>
+</header>
 
   <div class="wrap">
     <header class="hero">
