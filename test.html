@@ -3,572 +3,820 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Élégance & Douceur des Jambes — Tarifs Épilation</title>
+  <title>Beauté Mélisse — Esthéticienne à domicile à Pourrières</title>
+  <meta name="description" content="Esthéticienne à domicile à Pourrières et alentours. Soins naturels, hypoallergéniques, beauté des ongles, épilations douces, rituels bien-être, beauté du regard." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --text: #3f2e1f;
-      --accent: #305718;
-      --btn: #7fa77a;
-      --btn-dark: #43290c;
-      --btn-text: #ffffff;
-      --bg: #f4e7d7;
-      --bg2: #ead7c0;
-      --card: rgba(255,255,255,.62);
-      --stroke: rgba(63,46,31,.18);
-      --shadow: 0 14px 35px rgba(63,46,31,.15);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1120px;
-
-      /* IMPORTANT: le bug venait surtout de ce masque/shine qui peut casser l'affichage sur certains navigateurs */
-      --shine: radial-gradient(700px 280px at 15% 10%, rgba(255,255,255,.55), transparent 60%);
+      --text:#3f2e1f;
+      --accent:#305718;
+      --btn:#7fa77a;
+      --btn-dark:#43290c;
+      --btn-text:#ffffff;
+      --bg:#f4e7d7;
+      --bg2:#ead7c0;
+      --card:rgba(255,255,255,.55);
+      --stroke:rgba(63,46,31,.18);
+      --shadow:0 14px 35px rgba(63,46,31,.15);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
     }
 
-    *{box-sizing:border-box}
-    img{max-width:100%; height:auto;}
-
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 18% 12%, rgba(127,167,122,.22), transparent 55%),
-        radial-gradient(1100px 650px at 82% 18%, rgba(67,41,12,.16), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+        radial-gradient(1200px 600px at 10% -10%, rgba(127,167,122,.20), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(48,87,24,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.55;
     }
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 18px 70px;
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    .container{width:min(var(--max), calc(100% - 48px));margin-inline:auto;}
+    .highlight{color:var(--accent);font-weight:900;}
+
+    /* =========================
+       HEADER
+       ========================= */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(244,231,215,.85);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:18px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand img{
+      height:200px;
+      width:auto;
+      filter:drop-shadow(0 14px 26px rgba(63,46,31,.25));
+    }
+
+    .nav-right{display:flex;align-items:center;gap:18px;}
+    .navlinks{display:flex;align-items:center;gap:18px;}
+    .navlinks a{
+      position:relative;
+      font-weight:800;
+      padding:10px 6px;
+      opacity:.95;
+    }
+    .navlinks a::after{
+      content:"";
+      position:absolute;
+      left:6px;right:6px;bottom:6px;
+      height:2px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform:scaleX(0);
+      transition:transform .2s ease;
+    }
+    .navlinks a:hover::after{transform:scaleX(1);}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(180deg, var(--btn), #6f9f6a);
+      color:var(--btn-text);
+      font-weight:900;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:0 14px 30px rgba(67,41,12,.22);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(67,41,12,.28);}
+    .btn.secondary{background:linear-gradient(180deg, var(--btn-dark), #2f1c08);}
+    .wa-dot{width:10px;height:10px;border-radius:50%;background:#fff;}
+
+    .burger{
+      display:none;
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.35);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+    .burger span,
+    .burger span::before,
+    .burger span::after{
+      width:18px;height:2px;background:var(--text);display:block;
+    }
+    .burger span{position:relative;}
+    .burger span::before,.burger span::after{content:"";position:absolute;left:0;}
+    .burger span::before{top:-6px;}
+    .burger span::after{top:6px;}
+
+    .mobile-panel{display:none;padding:10px 0 18px;}
+    header[data-open="true"] .mobile-panel{display:block;}
+    .mobile-panel .navlinks{flex-direction:column;align-items:flex-start;gap:10px;}
+
+    /* =========================
+       SECTIONS
+       ========================= */
+    section{padding:84px 0;scroll-margin-top:110px;}
+    .section-title{
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:clamp(28px, 3vw, 40px);
+      margin:0 0 10px;
+    }
+    .section-kicker{
+      color:rgba(63,46,31,.76);
+      font-size:16px;
+      margin:0 0 26px;
+      max-width:70ch;
     }
 
     /* =========================
-   HEADER (logo grand + marge faible)
-   ========================= */
-
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(12px);
-  background: rgba(244,231,215,.88);
-  border-bottom: 1px solid var(--stroke);
-}
-
-.nav-wrap{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 18px;        /* ← retire presque toute la marge */
-  height: 95px;           /* ← hauteur FIXE du header */
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-}
-
-/* conteneur logo */
-.brand{
-  display:flex;
-  align-items:center;
-  height:100%;
-  overflow:hidden;        /* ← coupe le vide du PNG */
-}
-
-/* logo */
-.brand img{
-  height: 150px;          /* plus grand que le header */
-  display:block;
-  filter: drop-shadow(0 8px 18px rgba(63,46,31,.15));
-}
-
-
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.nav-link, .dropbtn{
-  text-decoration:none;
-  color: var(--text);
-  font-weight: 850;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  transition: .18s ease;
-}
-
-.nav-link:hover, .dropbtn:hover{
-  background: rgba(127,167,122,.18);
-  color: var(--accent);
-  border-color: rgba(48,87,24,.18);
-}
-
-/* Dropdown */
-.dropdown{ position: relative; }
-
-.caret{
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  margin-top: -2px;
-  opacity: .85;
-}
-
-.dropdown-menu{
-  position:absolute;
-  right: 0;
-  top: calc(100% + 10px);
-  min-width: 220px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,.85);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
-  display: none;
-}
-
-.dropdown-menu a{
-  display:block;
-  padding: 10px 12px;
-  border-radius: 14px;
-  text-decoration:none;
-  color: var(--text);
-  font-weight: 750;
-  border: 1px solid transparent;
-  transition: .15s ease;
-}
-
-.dropdown-menu a:hover{
-  background: rgba(127,167,122,.18);
-  color: var(--accent);
-  border-color: rgba(48,87,24,.18);
-}
-
-.dropdown.is-open .dropdown-menu{ display:block; }
-
-/* Mobile */
-@media (max-width: 720px){
-  .nav-wrap{ padding: 6px 14px; gap: 10px; }
-  .brand img{
-    height: 70px;
-    transform: scale(1.04);
-  }
-  .dropdown-menu{ left: 0; right: 0; min-width: unset; }
-}
-
-
-    /* CARD SYSTEM */
-    .card{
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
+       HERO
+       ========================= */
+    .hero{padding-top:34px;}
+    .banner{
       position:relative;
+      border-radius:32px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.45);
+      box-shadow:var(--shadow);
+      background:
+        radial-gradient(900px 520px at 18% 18%, rgba(127,167,122,.28), transparent 62%),
+        radial-gradient(820px 520px at 92% 16%, rgba(48,87,24,.20), transparent 60%),
+        linear-gradient(135deg, rgba(244,231,215,1), rgba(234,215,192,1));
     }
-    /* FIX: pseudo-element ne doit JAMAIS passer au-dessus du contenu */
-    .card::before{
+    .banner::after{
       content:"";
-      position:absolute;
-      inset:0;
-      background: var(--shine);
+      position:absolute;inset:0;
+      background:linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.08) 55%, rgba(255,255,255,0));
       pointer-events:none;
-      z-index:0;        /* <-- clé */
     }
-    /* FIX: tout le contenu des cards passe au-dessus */
-    .card > *{
-      position: relative;
-      z-index: 1;       /* <-- clé */
-    }
-
-    /* HERO */
-    header.hero{
+    .banner-inner{
+      position:relative;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      margin-top: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
-
-    .hero-left{ padding: 26px 24px 22px; }
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(48,87,24,.28);
-      background: rgba(127,167,122,.18);
-      font-weight: 750;
-      letter-spacing:.2px;
-      width: fit-content;
-    }
-    .badge i{
-      width:10px;height:10px;border-radius:50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
-    }
-    h1{
-      margin: 12px 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.05;
-      letter-spacing:-.4px;
-    }
-    .sub{
-      margin: 0 0 12px;
-      font-size: 1.05rem;
-      opacity: .92;
-      max-width: 64ch;
-    }
-    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px dashed rgba(63,46,31,.22);
-      background: rgba(255,255,255,.28);
-      font-size: .95rem;
-    }
-
-    .hero-right{ padding:18px; }
-    .imgbox{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      min-height: 320px;
-      border: 1px solid rgba(63,46,31,.12);
-      box-shadow: 0 10px 28px rgba(63,46,31,.10);
-      background: rgba(255,255,255,.25);
-    }
-    /* FIX: éviter que l'image prenne une hauteur incohérente */
-    .imgbox img{
-      width:100%;
-      height: 320px;
-      object-fit: cover;
-      display:block;
-    }
-
-    /* SECTIONS */
-    .section{ margin-top: 26px; }
-    .section-head{
-      display:flex;
-      align-items: stretch;
-      gap: 12px;
-      margin: 18px 0 12px;
-    }
-    @media (max-width: 720px){ .section-head{flex-direction:column;} }
-
-    .section-banner{
-      flex: 1;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 14px 14px 16px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.40);
-      box-shadow: 0 12px 30px rgba(63,46,31,.10);
-      overflow:hidden;
-      position:relative;
-    }
-    .section-banner::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(650px 260px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
-      pointer-events:none;
-    }
-    .section-title{
-      margin:0;
-      font-size: 1.35rem;
-      font-weight: 900;
-      letter-spacing:-.2px;
-    }
-    .section-sub{
-      margin: 2px 0 0;
-      opacity:.85;
-      font-size:.95rem;
-    }
-    .section-media{
-      width: 110px;
-      min-width:110px;
-      height: 74px;
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(63,46,31,.12);
-      background: rgba(255,255,255,.22);
-      box-shadow: 0 10px 20px rgba(63,46,31,.10);
+      grid-template-columns:1.3fr .7fr;
+      align-items:stretch;
+      min-height:520px;
       z-index:1;
     }
-    .section-media img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-
-    /* GRID & SERVICES */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 12px;
-    }
-    .service{
-      grid-column: span 6;
-      padding: 16px 16px 14px;
-      border-radius: var(--radius2);
-      display:flex;
-      flex-direction:column;
-      height: 100%;
-      transition: transform .12s ease, filter .15s ease;
-    }
-    .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
-    @media (max-width: 920px){ .service{ grid-column: span 12; } }
-
-    .service-head{
-      display:flex;
-      justify-content: space-between;
-      gap:10px;
-      margin-bottom: 8px;
-      align-items:flex-start;
-    }
-    .service h3{
+    .banner-left{padding:44px 38px;display:flex;flex-direction:column;justify-content:center;gap:14px;}
+    .headline{
+      font-family:"Playfair Display", serif;
+      font-weight:800;
+      font-size:clamp(34px, 4vw, 56px);
+      line-height:1.06;
       margin:0;
-      font-size:1.08rem;
-      line-height:1.25;
-      letter-spacing:-.1px;
     }
-    .price{
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(48,87,24,.12);
-      border: 1px solid rgba(48,87,24,.18);
-      font-weight: 900;
-      white-space:nowrap;
+    .lead{margin:0;font-size:18px;color:rgba(63,46,31,.88);max-width:66ch;}
+    .pill{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+    .tag{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.35);
+      border:1px solid var(--stroke);
+      box-shadow:0 10px 22px rgba(63,46,31,.08);
+      font-weight:700;
+      color:rgba(63,46,31,.92);
     }
-
-    .list{
-      margin: 10px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:8px;
+    .dot{width:9px;height:9px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(48,87,24,.12);}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+    .banner-right{position:relative;display:flex;align-items:center;justify-content:center;padding:18px 18px 18px 0;}
+    .portrait{
+      width:100%;height:100%;min-height:520px;
+      border-top-left-radius:28px;border-bottom-left-radius:28px;
+      overflow:hidden;
+      border-left:1px solid rgba(63,46,31,.10);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);
+      position:relative;
     }
-    .row{
-      display:flex;
-      align-items:baseline;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(63,46,31,.12);
-      background: rgba(255,255,255,.30);
-    }
-    .row b{ font-weight: 750; }
-    .row span{ font-weight: 900; }
-
-    .hint{
-      margin-top:auto;
-      padding-top: 10px;
-      font-size:.95rem;
-      opacity:.9;
+    .portrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);}
+    .portrait::after{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(420px 260px at 20% 10%, rgba(127,167,122,.18), transparent 60%), linear-gradient(180deg, rgba(0,0,0,.12), transparent 40%, rgba(0,0,0,.16));
+      pointer-events:none;
     }
 
-    .note{
-      grid-column: span 12;
-      padding: 16px;
+    /* =========================
+       PRESTATIONS
+       ========================= */
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px;}
+    .card{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.35);
+      box-shadow:0 12px 28px rgba(63,46,31,.10);
+      transition:transform .16s ease, box-shadow .16s ease, filter .16s ease;
+      position:relative;
     }
-    .divider{
-      height:1px;
-      background: rgba(63,46,31,.12);
-      margin: 12px 0;
+    .card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(63,46,31,.16);filter:brightness(1.01);}
+    .card .img{aspect-ratio:4/3;width:100%;object-fit:cover;}
+    .card .body{padding:16px 16px 18px;}
+    .card h3{margin:0 0 6px;font-family:"Playfair Display", serif;font-size:22px;letter-spacing:.2px;}
+    .card p{margin:0;color:rgba(63,46,31,.82);font-size:15px;}
+    .card .linkrow{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-weight:800;color:var(--btn-dark);}
+    .arrow{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;border:1px solid rgba(67,41,12,.28);background:rgba(255,255,255,.25);transition:transform .16s ease, background .16s ease;}
+    .card:hover .arrow{transform:translateX(2px);background:rgba(255,255,255,.42);}
+
+    /* =========================
+       HISTOIRE + DIPLÔMES
+       ========================= */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin-top:22px;}
+    .panel{
+      border-radius:var(--radius2);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.35);
+      box-shadow:0 12px 28px rgba(63,46,31,.08);
+      padding:18px;
+    }
+    .panel h4{margin:0 0 10px;font-size:16px;letter-spacing:.2px;}
+    .panel p{margin:0;color:rgba(63,46,31,.84);}
+    .story-img{width:100%;height:200px;object-fit:cover;border-radius:16px;margin-bottom:14px;box-shadow:0 10px 24px rgba(63,46,31,.18);}
+
+    .diplomas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px;}
+    .diploma-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.38);
+      box-shadow:0 12px 28px rgba(63,46,31,.08);
+      padding:18px;
+      min-height:150px;
+    }
+    .diploma-card::before{
+      content:"";
+      position:absolute;
+      width:120px;height:120px;
+      right:-46px;top:-46px;
+      border-radius:50%;
+      background:rgba(127,167,122,.22);
+    }
+    .diploma-year{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:64px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(48,87,24,.12);
+      color:var(--accent);
+      font-weight:900;
+      border:1px solid rgba(48,87,24,.18);
+      margin-bottom:12px;
+    }
+    .diploma-card h3{
+      position:relative;
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size:20px;
+      line-height:1.15;
+    }
+    .diploma-card p{position:relative;margin:8px 0 0;color:rgba(63,46,31,.78);font-size:14px;}
+
+    /* =========================
+       AVIS
+       ========================= */
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
+    .review{border-radius:var(--radius2);border:1px solid var(--stroke);background:rgba(255,255,255,.35);box-shadow:0 12px 28px rgba(63,46,31,.08);padding:16px;}
+    .review .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
+    .review .name{font-weight:900;}
+    .stars{letter-spacing:1px;color:var(--btn-dark);font-weight:900;font-size:14px;white-space:nowrap;}
+    .review p{margin:0;color:rgba(63,46,31,.84);font-size:15px;}
+    .google-source{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.85;}
+    .google-source img{height:42px;width:auto;filter:grayscale(100%);}
+    .google-source p{margin:0;font-size:14px;color:rgba(63,46,31,.75);text-align:center;}
+
+    /* =========================
+       FAQ
+       ========================= */
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+    details{border-radius:var(--radius2);border:1px solid var(--stroke);background:rgba(255,255,255,.35);box-shadow:0 12px 28px rgba(63,46,31,.06);padding:14px 16px;}
+    summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+    summary::-webkit-details-marker{display:none;}
+    summary .chev{width:34px;height:34px;border-radius:999px;border:1px solid rgba(67,41,12,.25);display:grid;place-items:center;background:rgba(255,255,255,.25);transition:transform .18s ease;flex:0 0 auto;}
+    details[open] summary .chev{transform:rotate(180deg);}
+    details p{margin:10px 0 0;color:rgba(63,46,31,.84);font-size:15px;}
+
+    /* =========================
+       CONTACT
+       ========================= */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;align-items:start;}
+    form{display:grid;gap:12px;}
+    label{font-weight:800;font-size:14px;}
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(63,46,31,.22);
+      background:rgba(255,255,255,.55);
+      color:var(--text);
+      font:inherit;
+      outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease;
+    }
+    input:focus,textarea:focus{border-color:rgba(48,87,24,.55);box-shadow:0 0 0 4px rgba(48,87,24,.12);}
+    textarea{min-height:120px;resize:vertical;}
+    .note{font-size:13px;color:rgba(63,46,31,.72);margin-top:6px;}
+
+    /* =========================
+       FOOTER PREMIUM
+       ========================= */
+    .footer{
+      padding:46px 0 36px;
+      border-top:1px solid var(--stroke);
+      background:
+        radial-gradient(900px 380px at 18% 0%, rgba(127,167,122,.18), transparent 60%),
+        linear-gradient(180deg, rgba(244,231,215,.75), rgba(234,215,192,.92));
+    }
+    .footer-wrap{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.26);border-radius:28px;box-shadow:0 18px 44px rgba(63,46,31,.12);overflow:hidden;position:relative;}
+    .footer-wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(255,255,255,.22), rgba(255,255,255,0) 55%);pointer-events:none;}
+    .footer-inner{position:relative;padding:26px 22px;display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:18px;align-items:start;}
+    .footer-brand{display:flex;flex-direction:column;gap:10px;}
+    .footer-title{font-family:"Playfair Display", serif;font-weight:800;font-size:22px;margin:0;letter-spacing:.2px;}
+    .footer-desc{margin:0;color:rgba(63,46,31,.82);max-width:52ch;}
+    .footer-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+    .footer-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.30);border:1px solid var(--stroke);box-shadow:0 10px 22px rgba(63,46,31,.08);font-weight:800;color:rgba(63,46,31,.92);font-size:13px;}
+    .footer-badge .mini-dot{width:9px;height:9px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(48,87,24,.12);}
+    .footer-col h4{margin:2px 0 10px;font-size:14px;letter-spacing:.2px;text-transform:uppercase;color:rgba(63,46,31,.78);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid rgba(63,46,31,.14);background:rgba(255,255,255,.25);transition:transform .15s ease, background .15s ease, border-color .15s ease;font-weight:800;}
+    .footer-links a:hover{transform:translateY(-2px);background:rgba(255,255,255,.40);border-color:rgba(48,87,24,.28);}
+    .footer-links small{color:rgba(63,46,31,.70);font-weight:600;}
+    .social-row{display:flex;gap:10px;flex-wrap:wrap;}
+    .social-btn{width:46px;height:46px;display:grid;place-items:center;border-radius:16px;border:1px solid rgba(63,46,31,.16);background:rgba(255,255,255,.28);box-shadow:0 12px 26px rgba(63,46,31,.10);transition:transform .15s ease, background .15s ease, border-color .15s ease;}
+    .social-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.42);border-color:rgba(48,87,24,.28);}
+    .social-icon{width:20px;height:20px;display:block;}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 22px 18px;border-top:1px solid rgba(63,46,31,.10);background:rgba(255,255,255,.18);}
+    .footer-bottom .note{margin:0;}
+    .backtop{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(63,46,31,.18);background:rgba(255,255,255,.25);font-weight:900;transition:transform .15s ease, background .15s ease;}
+    .backtop:hover{transform:translateY(-2px);background:rgba(255,255,255,.42);}
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+    @media (max-width:980px){
+      .banner-inner{grid-template-columns:1fr;}
+      .banner::after{background:none !important;}
+      .banner-right{padding:0 18px 18px;}
+      .portrait{min-height:420px;border-radius:24px;border-left:none;}
+      .banner-left{padding:34px 22px 18px;}
+      .cards,.reviews,.faq,.contact-grid,.split,.footer-inner{grid-template-columns:1fr;}
+      .diplomas-grid{grid-template-columns:1fr 1fr;}
+      .footer-bottom{flex-direction:column;align-items:flex-start;}
     }
 
+    @media (max-width:900px){
+      .nav > .nav-right > nav.navlinks{display:none;}
+      .burger{display:flex;}
+      header[data-open="true"] .mobile-panel{display:block;}
+      .mobile-panel nav.navlinks{display:flex;}
+      .brand img{height:96px;}
+    }
+
+    @media (max-width:860px){
+      .nav{flex-direction:column;align-items:stretch;gap:12px;}
+      .brand{justify-content:center;}
+      .brand img{height:120px;}
+      .nav-right{width:100%;display:flex;justify-content:space-between;align-items:center;}
+      .nav > .nav-right > nav.navlinks{display:none;}
+      .burger{display:flex;}
+      header[data-open="true"] .mobile-panel{display:block;}
+      .mobile-panel nav.navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+      section{padding:70px 0;}
+      .story-img{height:180px;}
+      .diplomas-grid{grid-template-columns:1fr;}
+      .container{width:min(var(--max), calc(100% - 32px));}
+    }
   </style>
 </head>
 
 <body>
-  <div id="top"></div>
+  <header id="top" data-open="false">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Retour en haut">
+          <img src="https://beaute-melisse.github.io/estheticienne/logo.png" alt="Logo Beauté Mélisse" />
+        </a>
 
-   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#top" aria-label="Accueil">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623"
-          alt="Logo"
-          loading="lazy"
-        />
-      </a>
+        <div class="nav-right">
+          <nav class="navlinks" aria-label="Navigation principale">
+            <a href="#prestations">Prestations</a>
+            <a href="#histoire">Mon histoire</a>
+            <a href="#diplomes">Diplômes</a>
+            <a href="#avis">Avis</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
-      <nav class="menu" aria-label="Navigation principale">
-        <a class="nav-link" href="https://beaute-melisse.github.io/estheticienne/">Accueil</a>
+          <a class="btn" href="https://wa.me/33609374492?text=Bonjour%20Beaut%C3%A9%20M%C3%A9lisse%20%F0%9F%8C%BF%20Je%20souhaite%20prendre%20rendez-vous." target="_blank" rel="noopener">
+            <span class="wa-dot" aria-hidden="true"></span>
+            06 09 37 44 92
+          </a>
 
-    
-      </nav>
+          <button class="burger" id="burger" aria-label="Menu mobile" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel">
+        <nav class="navlinks" aria-label="Navigation mobile">
+          <a href="#prestations">Prestations</a>
+          <a href="#histoire">Mon histoire</a>
+          <a href="#diplomes">Diplômes</a>
+          <a href="#avis">Avis</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="margin-top:14px;">
+          <a class="btn" href="https://wa.me/33609374492" target="_blank" rel="noopener">
+            <span class="wa-dot" aria-hidden="true"></span>
+            Contactez-moi : 06 09 37 44 92
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <div class="wrap">
-    <header class="hero">
-      <div class="card hero-left">
-        <div class="badge"><i></i> Beauté du Regard • Tarifs</div>
-        <h1>Sublimez votre regard naturellement</h1>
-        <p class="sub">
-         Réhaussement, teinture ou extensions de cils : choisissez la prestation idéale pour un regard plus intense, élégant et lumineux dès le réveil.
-        </p>
-        <div class="pill-row">
-          <span class="pill">Technique respectueuse du cil naturel</span>
-          <span class="pill">Résultat naturel ou glamour</span>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="container">
+      <div class="banner">
+        <div class="banner-inner">
+          <div class="banner-left">
+            <h1 class="headline">
+              Esthéticienne à domicile,
+              <span class="highlight">à Pourrières et alentours</span>
+            </h1>
 
-      <aside class="card hero-right">
-        <div class="imgbox">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="Beauté du regard"
-            loading="lazy"
-          />
-        </div>
-      </aside>
-    </header>
+            <p class="lead">
+              Une parenthèse beauté <span class="highlight">chez vous</span>, sans stress :
+              je me déplace avec un matériel professionnel et une sélection de
+              <span class="highlight">soins naturels</span>, pensés pour les
+              <span class="highlight">peaux sensibles</span>.
+              L’objectif : un résultat net, une sensation de confort, et une expérience
+              <span class="highlight">douce & haut de gamme</span>.
+            </p>
 
-    <!-- SECTION: VISAGE -->
-    <section class="section" id="visage">
-      <div class="section-head">
-        <div class="section-banner">
-          <div>
-            <h2 class="section-title">Réhaussement de cils</h2>
-            <p class="section-sub">Le réhaussement est parfait pour sublimer vos yeux naturellement grâce à vos cils recourbés. Combiné avec une teinture, il permet d’intensifier le regard tout en gardant un effet naturel..</p>
-          </div>
-          <div class="section-media" aria-hidden="true">
-            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
-          </div>
-        </div>
-      </div>
+            <div class="pill" aria-label="Points forts">
+              <div class="tag"><span class="dot"></span>Produits hypoallergéniques & respectueux</div>
+              <div class="tag"><span class="dot"></span>Hygiène irréprochable</div>
+              <div class="tag"><span class="dot"></span>Rendez-vous flexible, à domicile</div>
+              <div class="tag"><span class="dot"></span>Diplômée & formée aux techniques beauté</div>
+            </div>
 
-      <div class="grid">
-        <section class="card service">
-          <div class="service-head">
-            <h3>Prestations réhaussement</h3>
-            <div class="price">Tarifs</div>
+            <div class="hero-actions">
+              <a class="btn secondary" href="#prestations">Découvrir les prestations</a>
+              <a class="btn" href="https://wa.me/33609374492?text=Bonjour%20Beaut%C3%A9%20M%C3%A9lisse%20%F0%9F%8C%BF%20Je%20souhaite%20prendre%20rendez-vous%20(%C3%A0%20Pourri%C3%A8res%20et%20alentours).%20Pouvez-vous%20me%20proposer%20un%20cr%C3%A9neau%20%3F" target="_blank" rel="noopener">
+                <span class="wa-dot" aria-hidden="true"></span>
+                WhatsApp direct
+              </a>
+            </div>
           </div>
 
-          <ul class="list">
-            <li class="row"><b>Réhaussement de cils</b><span>48€</span></li>
-            <li class="row"><b>Réhaussement de cils + teinture</b><span>53€</span></li>
-
-          </ul>
-
-        </section>
-
-  
-      </div>
-    </section>
-
-    <!-- SECTION: EXTENSION -->
-    <section class="section" id="corps">
-      <div class="section-head">
-        <div class="section-banner">
-          <div>
-            <h2 class="section-title">Extensions de cils</h2>
-            <p class="section-sub">Marre du mascara qui coule ? Les extensions de cils sont idéales pour gagner du temps au quotidien. Optez pour un résultat très naturel avec le cil à cil, ou plus intense et glamour avec la pose mixte.</p>
-          </div>
-          <div class="section-media" aria-hidden="true">
-            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          <div class="banner-right">
+            <div class="portrait" aria-label="Photo de présentation">
+              <img src="https://beaute-melisse.github.io/estheticienne/principal.png" alt="Beauté Mélisse - Esthéticienne à domicile" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid">
-        <section class="card service">
-          <div class="service-head">
-            <h3>Cil à Cil</h3>
-            <div class="price">Tarifs</div>
+  <section id="prestations">
+    <div class="container">
+      <h2 class="section-title">Prestations</h2>
+      <p class="section-kicker">
+        Quatre univers pour prendre soin de vous : des gestes précis, une approche douce,
+        et des produits orientés <span class="highlight">tolérance</span> & <span class="highlight">qualité</span>.
+      </p>
+
+      <div class="cards">
+        <a class="card" href="https://beaute-melisse.github.io/estheticienne/beaute-des-ongles" target="_blank" rel="noopener">
+          <img class="img" src="https://beaute-melisse.github.io/estheticienne/ongle.png" alt="Beauté des ongles" loading="lazy">
+          <div class="body">
+            <h3>Beauté des ongles</h3>
+            <p>Pose soignée, finitions impeccables, rendu élégant et durable — avec une application tout en douceur.</p>
+            <div class="linkrow"><span>Découvrir</span><span class="arrow" aria-hidden="true">➜</span></div>
           </div>
+        </a>
 
-          <ul class="list">
-            <li class="row"><b>Pose cil à cil</b><span>65€</span></li>
-            <li class="row"><b>Comblage</b><span>40€</span></li>
-            <li class="row"><b>Dépose + pose cil à cil</b><span>75€</span></li>
-         
-          </ul>
-
-      
-        </section>
-
-        <section class="card service">
-          <div class="service-head">
-            <h3>Mixte volume</h3>
-            <div class="price">Tarifs</div>
+        <a class="card" href="https://beaute-melisse.github.io/estheticienne/epilation" target="_blank" rel="noopener">
+          <img class="img" src="https://beaute-melisse.github.io/estheticienne/jambe.png" alt="Épilations douces" loading="lazy">
+          <div class="body">
+            <h3>Épilations douces</h3>
+            <p>Une méthode respectueuse de la peau, pour un résultat net et une sensation de confort après la séance.</p>
+            <div class="linkrow"><span>Découvrir</span><span class="arrow" aria-hidden="true">➜</span></div>
           </div>
+        </a>
 
-          <ul class="list">
-            <li class="row"><b>Pose mixte volume</b><span>75€</span></li>
-            <li class="row"><b>Comblage</b><span>50€</span></li>
-            <li class="row"><b>Dépose + pose mixte volume</b><span>85€</span></li>
-            
-          </ul>
-
-      
-        </section>
-
-        <section class="card service">
-          <div class="service-head">
-            <h3>Soin du Regard</h3>
-            <div class="price">Tarifs</div>
+        <a class="card" href="https://beaute-melisse.github.io/estheticienne/soins" target="_blank" rel="noopener">
+          <img class="img" src="https://beaute-melisse.github.io/estheticienne/massage.png" alt="Rituels bien-être" loading="lazy">
+          <div class="body">
+            <h3>Rituels bien-être</h3>
+            <p>Des rituels apaisants pour relâcher la pression, retrouver de l’éclat et vous sentir bien, tout simplement.</p>
+            <div class="linkrow"><span>Découvrir</span><span class="arrow" aria-hidden="true">➜</span></div>
           </div>
+        </a>
 
-          <ul class="list">
-            <li class="row"><b>Dépose + soin</b><span>25€</span></li>
-           
-          </ul>
-
-        </section>
+        <a class="card" href="https://beaute-melisse.github.io/estheticienne/regard" target="_blank" rel="noopener">
+          <img class="img" src="https://beaute-melisse.github.io/estheticienne/regard.png" alt="Beauté du regard" loading="lazy">
+          <div class="body">
+            <h3>Beauté du regard</h3>
+            <p>Sublimez votre regard grâce à une technique précise offrant longueur, courbure et intensité tout en respectant vos cils.</p>
+            <div class="linkrow"><span>Découvrir</span><span class="arrow" aria-hidden="true">➜</span></div>
+          </div>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <section id="histoire">
+    <div class="container">
+      <h2 class="section-title">Mon histoire</h2>
+      <p class="section-kicker">
+        Une approche née d’une expérience personnelle : prendre soin de la peau avec exigence,
+        sans compromis sur la <span class="highlight">tolérance</span>.
+      </p>
 
-  </div>
+      <div class="split">
+        <div class="panel">
+          <img class="story-img" src="https://beaute-melisse.github.io/estheticienne/bd1.png" alt="Travail en institut de beauté" />
+          <h4>De l’institut au domicile</h4>
+          <p>
+            J’ai travaillé en institut, au contact de nombreuses peaux différentes. Au fil du temps,
+            j’ai aussi constaté que certains produits, pourtant “classiques”, ne conviennent pas à tout le monde.
+            Après une <span class="highlight">réaction allergique</span>, j’ai choisi de repenser ma manière de travailler.
+          </p>
+        </div>
 
-  
+        <div class="panel">
+          <img class="story-img" src="https://beaute-melisse.github.io/estheticienne/bd2.png" alt="Produits naturels et hypoallergéniques" />
+          <h4>Le meilleur des produits, pour toutes</h4>
+          <p>
+            Aujourd’hui, je me déplace à domicile avec une sélection de produits orientés <span class="highlight">qualité</span>, <span class="highlight">douceur</span> et
+            <span class="highlight">hypoallergénicité</span>, soigneusement choisis et testés, afin d’offrir une expérience confortable, rassurante et personnalisée,
+            même aux peaux sensibles — dans votre cocon, à votre rythme.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="diplomes">
+    <div class="container">
+      <h2 class="section-title">Diplômes & formations</h2>
+      <p class="section-kicker">
+        Des prestations réalisées avec sérieux, grâce à un parcours professionnel complet et des formations dédiées à la beauté, à l’hygiène et aux techniques spécialisées.
+      </p>
+
+      <div class="diplomas-grid" aria-label="Diplômes et formations Beauté Mélisse">
+        <div class="diploma-card">
+          <span class="diploma-year">2012</span>
+          <h3>CAP Esthétique Cosmétique Parfumerie</h3>
+          <p>Diplôme de base du métier, dédié aux soins, à la beauté et au conseil.</p>
+        </div>
+
+        <div class="diploma-card">
+          <span class="diploma-year">2020</span>
+          <h3>Prothésiste ongulaire</h3>
+          <p>Formation spécialisée pour la mise en beauté des ongles et les finitions soignées.</p>
+        </div>
+
+        <div class="diploma-card">
+          <span class="diploma-year">2026</span>
+          <h3>Certibiocide</h3>
+          <p>Certification liée à l’utilisation encadrée de produits biocides et aux bonnes pratiques d’hygiène.</p>
+        </div>
+
+        <div class="diploma-card">
+          <span class="diploma-year">Formation</span>
+          <h3>Technicienne de cils</h3>
+          <p>Formation dédiée à la beauté du regard et au respect des cils naturels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avis">
+    <div class="container">
+      <h2 class="section-title">Les avis</h2>
+      <p class="section-kicker">Elles m'ont fait confiance...</p>
+
+      <div class="reviews">
+        <div class="review">
+          <div class="top"><div class="name">Sophie M.</div><div class="stars">★★★★★</div></div>
+          <p>Très douce, super pro, et un résultat impeccable. Le confort du domicile change tout !</p>
+        </div>
+        <div class="review">
+          <div class="top"><div class="name">Camille R.</div><div class="stars">★★★★★</div></div>
+          <p>Peau sensible ici : aucune irritation. Produits top, hygiène irréprochable, je recommande.</p>
+        </div>
+        <div class="review">
+          <div class="top"><div class="name">Nadia L.</div><div class="stars">★★★★★</div></div>
+          <p>On sent la qualité et la passion. Manucure parfaite, et en plus j’étais chez moi, trop bien.</p>
+        </div>
+      </div>
+
+      <div class="google-source">
+        <img src="https://beaute-melisse.github.io/estheticienne/google.png" alt="Avis Google" />
+        <p>Avis clients <strong>collectés via Google</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-kicker">Les réponses aux questions qu’on me pose le plus souvent.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Dans quelle zone te déplaces-tu ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>Je propose des prestations à domicile sur <span class="highlight">Pourrières</span> et ses environs. Le déplacement est inclus à partir de 20 € de prestation. Des frais supplémentaires peuvent être appliqués selon la distance.</p>
+        </details>
+
+        <details>
+          <summary>Quels moyens de paiement sont acceptés ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>J’accepte les paiements en espèces ainsi que par carte bancaire, afin de vous offrir plus de simplicité et de flexibilité lors du règlement de votre prestation. En revanche, les chèques ne sont plus acceptés.</p>
+        </details>
+
+        <details>
+          <summary>Les prestations sont-elles adaptées aux personnes à mobilité réduite ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>Oui, les prestations à domicile sont tout à fait adaptées aux personnes à mobilité réduite. N’hésite pas à me contacter pour plus de précisions à ce sujet.</p>
+        </details>
+
+        <details>
+          <summary>Est-ce adapté aux peaux sensibles ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>Oui : les produits sont orientés <span class="highlight">douceur</span> et <span class="highlight">hypoallergénicité</span>. On fait le point avant la séance si besoin.</p>
+        </details>
+
+        <details>
+          <summary>Comment prendre rendez-vous ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>Tu peux me contacter directement via <span class="highlight">WhatsApp</span>.</p>
+        </details>
+
+        <details>
+          <summary>Comment se passe une prestation à domicile ? <span class="chev" aria-hidden="true">⌄</span></summary>
+          <p>Je me déplace avec tout le matériel nécessaire, y compris une <span class="highlight">table</span>, afin de garantir une installation confortable et adaptée pendant la prestation.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-kicker">
+        Le plus simple : contactez-moi directement au <span class="highlight">06 09 37 44 92</span>.
+      </p>
+
+      <div class="contact-grid">
+        <div class="panel">
+          <h4>WhatsApp direct</h4>
+          <p>Clique ici pour m’écrire avec un message pré-rempli :</p>
+
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn" href="https://wa.me/33609374492?text=Bonjour%20Beaut%C3%A9%20M%C3%A9lisse%20%F0%9F%8C%BF%20Je%20souhaite%20prendre%20rendez-vous.%20Je%20suis%20%C3%A0%20Pourri%C3%A8res%20/%20alentours.%20Mes%20disponibilit%C3%A9s%20%3A%20_____%20.%20Prestation%20souhait%C3%A9e%20%3A%20_____%20." target="_blank" rel="noopener">
+              <span class="wa-dot" aria-hidden="true"></span>
+              Écrire sur WhatsApp
+            </a>
+            <a class="btn secondary" href="#top">Retour en haut</a>
+          </div>
+
+          <p class="note">Numéro : 06 09 37 44 92 — Adresse e-mail : beautemelisse@gmail.com</p>
+        </div>
+
+        <div class="panel">
+          <h4>Formulaire (optionnel)</h4>
+          <p class="note" style="margin:0 0 10px;">Si tu as une question, n’hésite pas à utiliser le formulaire ci-dessous.</p>
+
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div>
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="Votre nom" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="votre@email.com" required>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre demande (prestation, commune, créneaux)…" required></textarea>
+            </div>
+            <button class="btn" type="submit">Envoyer</button>
+            <div class="note">Formulaire de demande d'information</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrap">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <p class="footer-title">Beauté Mélisse</p>
+            <p class="footer-desc">
+              Esthéticienne à domicile à <strong>Pourrières</strong> et alentours.
+              Soins naturels, gestes précis, et une attention particulière aux <strong>peaux sensibles</strong>.
+            </p>
+
+            <div class="footer-badges" aria-label="Contact rapide">
+              <a class="footer-badge" href="tel:+33609374492"><span class="mini-dot" aria-hidden="true"></span>06 09 37 44 92</a>
+              <a class="footer-badge" href="mailto:beautemelisse@gmail.com"><span class="mini-dot" aria-hidden="true"></span>beautemelisse@gmail.com</a>
+              <a class="footer-badge" href="https://wa.me/33609374492" target="_blank" rel="noopener"><span class="mini-dot" aria-hidden="true"></span>WhatsApp direct</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Informations</h4>
+            <div class="footer-links">
+              <a href="https://beaute-melisse.github.io/estheticienne/mentions-legales">Mentions légales <small>↗</small></a>
+              <a href="https://beaute-melisse.github.io/estheticienne/politique-confidentialite">Politique de confidentialité <small>↗</small></a>
+              <a href="https://beaute-melisse.github.io/estheticienne/cgv">CGV / Prestations <small>↗</small></a>
+              <a href="#diplomes">Diplômes & formations <small>↓</small></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Réseaux</h4>
+            <div class="social-row" aria-label="Réseaux sociaux">
+              <a class="social-btn" href="https://www.instagram.com/beaute_melisse83/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </a>
+
+              <a class="social-btn" href="https://www.facebook.com/beaute_melisse83" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+
+            <p class="note" style="margin-top:12px;">Pour un rendez-vous rapide : WhatsApp reste le plus simple.</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="note">© <span id="year"></span> <strong>Beauté Mélisse</strong> — Tous droits réservés</p>
+          <a class="backtop" href="#prestations" aria-label="Prestations">↑ Prestations</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    (function(){
-      const dd = document.getElementById('tarifsDropdown');
-      const btn = document.getElementById('tarifsBtn');
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-      function closeDropdown(){
-        dd.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
+    const header = document.querySelector("header");
+    const burger = document.getElementById("burger");
 
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const open = dd.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
+    function setOpen(isOpen){
+      header.dataset.open = isOpen ? "true" : "false";
+      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
 
-      document.addEventListener('click', closeDropdown);
-      dd.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDropdown));
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdown(); });
-    })();
+    burger.addEventListener("click", () => {
+      const isOpen = header.dataset.open === "true";
+      setOpen(!isOpen);
+    });
+
+    document.querySelectorAll('.mobile-panel a[href^="#"]').forEach(a => {
+      a.addEventListener("click", () => setOpen(false));
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 860) setOpen(false);
+    });
   </script>
 </body>
 </html>
