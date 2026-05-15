@@ -397,248 +397,116 @@
 
    <div id="top"></div>
 
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#top" aria-label="Accueil">
+ <header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="Accueil">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623"
+        alt="Logo de l’institut"
+        loading="lazy"
+      />
+    </a>
+
+    <nav class="menu" aria-label="Navigation principale">
+      <a class="nav-link" href="https://killevent.github.io/tests/">Accueil</a>
+
+      <div class="dropdown" id="tarifsDropdown">
+        <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" id="tarifsBtn">
+          Tarifs <span class="caret" aria-hidden="true"></span>
+        </button>
+
+        <div class="dropdown-menu" role="menu" aria-labelledby="tarifsBtn">
+          <a href="https://killevent.github.io/tests/beaute-des-ongles.html" role="menuitem">Beauté des ongles</a>
+          <a href="https://killevent.github.io/tests/soins-visage" target="_blank" rel="noopener" role="menuitem">Soins du visage</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="card hero-left">
+      <div class="badge"><i></i> Soins du visage & modelages • Tarifs</div>
+      <h1>Offrez à votre peau un soin personnalisé, adapté à ses besoins</h1>
+      <p class="sub">
+        Chaque soin du visage est réalisé sur mesure, en fonction de votre type de peau et de ses besoins spécifiques : peau grasse, mixte, sensible, sèche, atopique, sujette aux allergies cutanées ou en manque de tonicité.
+      </p>
+
+      <div class="pill-row">
+        <span class="pill">Soins du visage adaptés à votre peau</span>
+        <span class="pill">Modelages réalisés par une professionnelle</span>
+      </div>
+    </div>
+
+    <aside class="card hero-right">
+      <div class="imgbox">
         <img
-          src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623"
-          alt="Logo"
+          src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286"
+          alt="Soin du visage en institut"
           loading="lazy"
         />
-      </a>
-
-      <nav class="menu" aria-label="Navigation principale">
-        <a class="nav-link" href="https://killevent.github.io/tests/">Accueil</a>
-
-        <div class="dropdown" id="tarifsDropdown">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" id="tarifsBtn">
-            Tarifs <span class="caret" aria-hidden="true"></span>
-          </button>
-
-          <div class="dropdown-menu" role="menu" aria-labelledby="tarifsBtn">
-            <a href="https://killevent.github.io/tests/beaute-des-ongles.html" role="menuitem">Beauté Ongles</a>
-            <a href="https://killevent.github.io/tests/soins-visage" target="_blank" rel="noopener" role="menuitem">Soins Visage</a>
-          </div>
-        </div>
-      </nav>
-    </div>
+      </div>
+    </aside>
   </header>
 
-  <div class="wrap">
-    <header class="hero">
-      <div class="card hero-left">
-        <div class="badge"><i></i> Beauté des ongles • Tarifs</div>
-        <h1>Des ongles nets, élégants et soignés pour vos mains et pour vos pieds.</h1>
-        <p class="sub">
-          Manucures, beauté des pieds, poses de vernis (classique ou semi-permanent) : des prestations
-          pensées pour un résultat propre, durable et raffiné.
+  <section class="section" id="semi">
+    <div class="section-head">
+      <div class="section-banner">
+        <div>
+          <h2 class="section-title">Soin du visage adapté aux besoins de votre peau</h2>
+          <p class="section-sub">Un soin complet pour nettoyer, apaiser, hydrater et révéler l’éclat naturel de votre peau.</p>
+        </div>
+        <div class="section-media" aria-hidden="true">
+          <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card service">
+        <div class="service-head">
+          <h3>Soin du visage personnalisé</h3>
+          <div class="price">69€</div>
+        </div>
+        <ul>
+          <li>Diagnostic de peau</li>
+          <li>Démaquillage</li>
+          <li>Nettoyage en profondeur</li>
+          <li>Gommage</li>
+          <li>Vapozone avec extraction des comédons</li>
+          <li>Modelage relaxant du visage</li>
+          <li>Pose d’un masque adapté</li>
+          <li>Application d’un sérum ciblé</li>
+          <li>Application d’une crème ou d’un gel hydratant</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="section" id="modelage">
+    <div class="section-head">
+      <div class="section-banner">
+        <div>
+          <h2 class="section-title">Modelage corps</h2>
+          <p class="section-sub">Un moment de détente profonde pour relâcher les tensions et retrouver une sensation de bien-être.</p>
+        </div>
+        <div class="section-media" aria-hidden="true">
+          <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card service">
+        <div class="service-head">
+          <h3>Modelage corps détente — 1h</h3>
+          <div class="price">60€</div>
+        </div>
+        <p class="desc">
+          Profitez d’un moment privilégié à domicile grâce à une table de massage professionnelle. Ce modelage du corps favorise la détente, libère les tensions et procure une relaxation complète, de la tête aux pieds. La pression est adaptée à vos préférences, pour un soin tout en douceur ou plus appuyé selon vos besoins.
         </p>
-
-        <div class="pill-row">
-          <span class="pill">Semi-permanent : tenue jusqu’à ~3 semaines (selon ongles & mode de vie)</span>
-          <span class="pill">Pose sur ongles naturels uniquement (pas d’extension artificielle).</span>
-        </div>
-      </div>
-
-      <aside class="card hero-right">
-        <div class="imgbox">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286"
-            alt="Beauté des ongles"
-            loading="lazy"
-          />
-        </div>
-      </aside>
-    </header>
-
-    <!-- SECTION: SEMI -->
-    <section class="section" id="semi">
-      <div class="section-head">
-        <div class="section-banner">
-          <div>
-            <h2 class="section-title">Vernis semi-permanent Mains ou Pieds</h2>
-            <p class="section-sub">Le vernis semi-permanent offre une tenue plus longue qu’un vernis classique (jusqu’à environ 3 semaines),
-        selon la qualité des ongles et le mode de vie.</p>
-          </div>
-          <div class="section-media" aria-hidden="true">
-            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <section class="card service">
-          <div class="service-head">
-            <h3>Pose de vernis semi-permanent</h3>
-            <div class="price">25€</div>
-          </div>
-          <ul>
-            <li>Coupe</li>
-            <li>Limage</li>
-            <li>Nettoyage des cuticules</li>
-            <li>Préparation des ongles</li>
-            <li>Pose de vernis semi-permanent</li>
-          </ul>
-          <div class="supp"><b>Supplément 3€ :</b> French ou Babyboomer</div>
-        </section>
-
-       
-       
-
-        <section class="card service">
-          <div class="service-head">
-            <h3>Dépose + soin des ongles</h3>
-            <div class="price">20€</div>
-          </div>
-          <ul>
-            <li>Retrait du semi-permanent</li>
-            <li>Coupe & limage (mise en forme)</li>
-            <li>Soin nourrissant</li>
-            <li>Base protectrice</li>
-          </ul>
-        </section>
-      </div>
-    </section>
-
-    <!-- SECTION: HANDS -->
-    <section class="section" id="mains">
-      <div class="section-head">
-        <div class="section-banner">
-          <div>
-            <h2 class="section-title">Manucures & Soins mains</h2>
-            <p class="section-sub">Un rendu propre et soigné, du plus express au plus cocooning.</p>
-          </div>
-          <div class="section-media" aria-hidden="true">
-            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <section class="card service">
-          <div class="service-head">
-            <h3>Manucure</h3>
-            <div class="price">20€</div>
-          </div>
-          <ul>
-            <li>Coupe</li>
-            <li>Limage</li>
-            <li>Retrait des cuticules</li>
-            <li>Huile nourrissante</li>
-            <li>Polissage</li>
-            <li>Base transparente</li>
-          </ul>
-          <p class="desc">Un petit soin express qui donnera un rendu soigné à vos ongles.</p>
-        </section>
-
-        <section class="card service">
-          <div class="service-head">
-            <h3>Manucure avec Soin</h3>
-            <div class="price">25€</div>
-          </div>
-          <ul>
-            <li>Gommage des mains</li>
-            <li>Bain émollient</li>
-            <li>Coupe, limage, retrait des cuticules</li>
-            <li>Huile nourrissante</li>
-            <li>Modelage</li>
-            <li>Polissage</li>
-            <li>Base transparente</li>
-          </ul>
-          <p class="desc">
-            Retrouvez la douceur de vos mains grâce au gommage tout en savourant un moment de détente grâce au modelage.
-          </p>
-        </section>
-      </div>
-    </section>
-
-<!-- SECTION: FEET -->
-<section class="section" id="pieds">
-  <div class="section-head">
-    <div class="section-banner">
-      <div>
-        <h2 class="section-title">Beauté des pieds</h2>
-        <p class="section-sub">Entretien, détente, ou soin complet : à chaque pied sa formule.</p>
-      </div>
-      <div class="section-media" aria-hidden="true">
-        <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
-      </div>
+      </section>
     </div>
-  </div>
-
-  <div class="grid">
-    <section class="card service">
-      <div class="service-head">
-        <h3>Beauté des pieds</h3>
-        <div class="price">20€</div>
-      </div>
-      <ul>
-        <li>Coupe</li>
-        <li>Limage</li>
-        <li>Retrait des cuticules</li>
-        <li>Huile nourrissante</li>
-        <li>Polissage</li>
-        <li>Base transparente</li>
-      </ul>
-    </br></br></br><p class="desc">Parfait pour entretenir vos ongles avant ou après les beaux jours.</p>
-    </section>
-
-    <section class="card service">
-      <div class="service-head">
-        <h3>Beauté des pieds avec Soin & Douceur</h3>
-        <div class="price">35€</div>
-      </div>
-      <ul>
-        <li>Coupe, limage, retrait des cuticules</li>
-        <li>Huile nourrissante</li>
-        <li>Gommage</li>
-        <li>Exfoliant pierre callosités</li>
-        <li>Bain de pieds relaxant</li>
-        <li>Modelage détente</li>
-        <li>Masque hydratant</li>
-        <li>Polissage</li>
-        <li>Base transparente</li>
-      </ul>
-      <p class="desc">Un véritable soin complet ! Un pur moment de relaxation.</p>
-    </section>
-  </div>
-</section>
-
-
-<!-- SECTION: VERNIS CLASSIQUE -->
-<section class="section" id="vernis-classique">
-  <div class="section-head">
-    <div class="section-banner">
-      <div>
-        <h2 class="section-title">Vernis classique</h2>
-        <p class="section-sub">La touche couleur express, parfaite pour mains ou pieds.</p>
-      </div>
-      <div class="section-media" aria-hidden="true">
-        <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
-      </div>
-    </div>
-  </div>
-
-  <div class="grid">
-    <section class="card service">
-      <div class="service-head">
-        <h3>Pose de vernis classique (mains ou pieds)</h3>
-        <div class="price">10€</div>
-      </div>
-
-      <ul>
-        <li>Application de vernis classique</li>
-        <li>Finition brillante et soignée</li>
-      </ul>
-
-      <p class="desc">
-        Idéal pour une mise en beauté rapide et élégante.
-      </p>
-    </section>
-
-    
-  </div>
-</section>
-
-</body>
-</html>
+  </section>
+</div>
