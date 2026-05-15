@@ -1,459 +1,412 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beauté du Regard — Tarifs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Élégance & Douceur des Jambes — Tarifs Épilation</title>
 
   <style>
-    :root {
+    :root{
       --text: #3f2e1f;
       --accent: #305718;
-      --accent-soft: rgba(127, 167, 122, .22);
-      --brown: #43290c;
+      --btn: #7fa77a;
+      --btn-dark: #43290c;
+      --btn-text: #ffffff;
       --bg: #f4e7d7;
-      --bg-2: #ead7c0;
-      --white: rgba(255, 255, 255, .68);
-      --stroke: rgba(63, 46, 31, .16);
-      --shadow: 0 18px 45px rgba(63, 46, 31, .14);
-      --radius: 26px;
+      --bg2: #ead7c0;
+      --card: rgba(255,255,255,.62);
+      --stroke: rgba(63,46,31,.18);
+      --shadow: 0 14px 35px rgba(63,46,31,.15);
+      --radius: 18px;
+      --radius2: 26px;
       --max: 1120px;
+
+      /* IMPORTANT: le bug venait surtout de ce masque/shine qui peut casser l'affichage sur certains navigateurs */
+      --shine: radial-gradient(700px 280px at 15% 10%, rgba(255,255,255,.55), transparent 60%);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    *{box-sizing:border-box}
+    img{max-width:100%; height:auto;}
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      line-height: 1.55;
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:var(--text);
       background:
-        radial-gradient(900px 500px at 15% 10%, rgba(127, 167, 122, .24), transparent 60%),
-        radial-gradient(900px 500px at 85% 5%, rgba(67, 41, 12, .14), transparent 62%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
+        radial-gradient(1200px 700px at 18% 12%, rgba(127,167,122,.22), transparent 55%),
+        radial-gradient(1100px 650px at 82% 18%, rgba(67,41,12,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height:1.55;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 36px));
+    .wrap{
+      max-width: var(--max);
       margin: 0 auto;
+      padding: 18px 18px 70px;
     }
 
-    /* Header */
+    /* =========================
+   HEADER (logo grand + marge faible)
+   ========================= */
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(244, 231, 215, .88);
-      border-bottom: 1px solid var(--stroke);
-      backdrop-filter: blur(14px);
-    }
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(244,231,215,.88);
+  border-bottom: 1px solid var(--stroke);
+}
 
-    .nav {
-      height: 92px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.nav-wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;        /* ← retire presque toute la marge */
+  height: 95px;           /* ← hauteur FIXE du header */
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
 
-    .brand {
-      height: 92px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      text-decoration: none;
-    }
+/* conteneur logo */
+.brand{
+  display:flex;
+  align-items:center;
+  height:100%;
+  overflow:hidden;        /* ← coupe le vide du PNG */
+}
 
-    .brand img {
-      height: 145px;
-      filter: drop-shadow(0 10px 18px rgba(63, 46, 31, .14));
-    }
+/* logo */
+.brand img{
+  height: 150px;          /* plus grand que le header */
+  display:block;
+  filter: drop-shadow(0 8px 18px rgba(63,46,31,.15));
+}
 
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
 
-    .nav-link,
-    .dropbtn {
-      border: 1px solid transparent;
-      border-radius: 999px;
-      padding: 10px 15px;
-      background: transparent;
-      color: var(--text);
-      font: inherit;
-      font-weight: 800;
-      text-decoration: none;
-      cursor: pointer;
-      transition: .2s ease;
-    }
 
-    .nav-link:hover,
-    .dropbtn:hover {
-      color: var(--accent);
-      background: rgba(127, 167, 122, .18);
-      border-color: rgba(48, 87, 24, .18);
-    }
+.menu{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-    .dropdown {
-      position: relative;
-    }
+.nav-link, .dropbtn{
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 850;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  transition: .18s ease;
+}
 
-    .dropbtn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+.nav-link:hover, .dropbtn:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
 
-    .caret {
-      width: 9px;
-      height: 9px;
-      border-right: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: rotate(45deg) translateY(-2px);
-    }
+/* Dropdown */
+.dropdown{ position: relative; }
 
-    .dropdown-menu {
-      position: absolute;
-      right: 0;
-      top: calc(100% + 12px);
-      min-width: 230px;
-      padding: 10px;
-      display: none;
+.caret{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  opacity: .85;
+}
+
+.dropdown-menu{
+  position:absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.85);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  display: none;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 750;
+  border: 1px solid transparent;
+  transition: .15s ease;
+}
+
+.dropdown-menu a:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
+
+.dropdown.is-open .dropdown-menu{ display:block; }
+
+/* Mobile */
+@media (max-width: 720px){
+  .nav-wrap{ padding: 6px 14px; gap: 10px; }
+  .brand img{
+    height: 70px;
+    transform: scale(1.04);
+  }
+  .dropdown-menu{ left: 0; right: 0; min-width: unset; }
+}
+
+
+    /* CARD SYSTEM */
+    .card{
+      background: var(--card);
       border: 1px solid var(--stroke);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, .9);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
     }
-
-    .dropdown.is-open .dropdown-menu {
-      display: block;
+    /* FIX: pseudo-element ne doit JAMAIS passer au-dessus du contenu */
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: var(--shine);
+      pointer-events:none;
+      z-index:0;        /* <-- clé */
     }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 11px 13px;
-      border-radius: 15px;
-      text-decoration: none;
-      font-weight: 750;
-    }
-
-    .dropdown-menu a:hover {
-      color: var(--accent);
-      background: rgba(127, 167, 122, .18);
-    }
-
-    /* Cards */
-
-    .card {
+    /* FIX: tout le contenu des cards passe au-dessus */
+    .card > *{
       position: relative;
-      overflow: hidden;
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      background: var(--white);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
+      z-index: 1;       /* <-- clé */
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background: radial-gradient(650px 260px at 15% 0%, rgba(255, 255, 255, .55), transparent 65%);
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Hero */
-
-    .hero {
-      display: grid;
+    /* HERO */
+    header.hero{
+      display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 18px;
-      padding-top: 22px;
-    }
-
-    .hero-content {
-      padding: 30px 26px;
-    }
-
-    .badge {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      border: 1px solid rgba(48, 87, 24, .25);
-      border-radius: 999px;
-      background: var(--accent-soft);
-      font-weight: 800;
-    }
-
-    .badge::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(48, 87, 24, .12);
-    }
-
-    h1 {
-      margin: 16px 0 10px;
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.02;
-      letter-spacing: -.7px;
-    }
-
-    .intro {
-      max-width: 62ch;
-      margin: 0;
-      font-size: 1.08rem;
-      opacity: .9;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       margin-top: 18px;
+      align-items: stretch;
     }
+    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
 
-    .pill {
-      padding: 9px 13px;
-      border: 1px dashed rgba(63, 46, 31, .22);
+    .hero-left{ padding: 26px 24px 22px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, .32);
-      font-weight: 650;
-    }
-
-    .hero-image {
-      padding: 18px;
-    }
-
-    .image-frame {
-      height: 100%;
-      min-height: 340px;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(63, 46, 31, .13);
-      background: rgba(255, 255, 255, .25);
-      box-shadow: 0 12px 30px rgba(63, 46, 31, .11);
-    }
-
-    .image-frame img {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
-      object-fit: cover;
-    }
-
-    /* Sections */
-
-    .section {
-      margin-top: 30px;
-    }
-
-    .section-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px;
-      margin-bottom: 14px;
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .42);
-      box-shadow: 0 12px 30px rgba(63, 46, 31, .1);
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(24px, 3vw, 34px);
-      line-height: 1.1;
-    }
-
-    .section-text {
-      margin: 7px 0 0;
-      max-width: 78ch;
-      opacity: .88;
-    }
-
-    .section-thumb {
-      width: 120px;
-      min-width: 120px;
-      height: 82px;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(63, 46, 31, .12);
-      box-shadow: 0 10px 22px rgba(63, 46, 31, .11);
-    }
-
-    .section-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-
-    .service {
-      grid-column: span 6;
-      padding: 18px;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-
-    .service:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 22px 52px rgba(63, 46, 31, .17);
-    }
-
-    .service.full {
-      grid-column: span 12;
-    }
-
-    .service-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 12px;
-    }
-
-    .service h3 {
-      margin: 0;
-      font-size: 1.16rem;
-      line-height: 1.25;
-    }
-
-    .price-label {
-      white-space: nowrap;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: var(--accent);
-      background: rgba(48, 87, 24, .12);
-      border: 1px solid rgba(48, 87, 24, .18);
-      font-weight: 900;
-    }
-
-    .price-list {
-      display: grid;
-      gap: 9px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 12px 13px;
-      border-radius: 16px;
-      border: 1px solid rgba(63, 46, 31, .12);
-      background: rgba(255, 255, 255, .34);
-    }
-
-    .price-row strong {
+      border: 1px solid rgba(48,87,24,.28);
+      background: rgba(127,167,122,.18);
       font-weight: 750;
+      letter-spacing:.2px;
+      width: fit-content;
     }
-
-    .price-row span {
-      font-weight: 950;
-      white-space: nowrap;
+    .badge i{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
     }
-
-    footer {
-      padding: 34px 0 60px;
-      text-align: center;
-      opacity: .75;
+    h1{
+      margin: 12px 0 10px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.4px;
+    }
+    .sub{
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      opacity: .92;
+      max-width: 64ch;
+    }
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px dashed rgba(63,46,31,.22);
+      background: rgba(255,255,255,.28);
       font-size: .95rem;
     }
 
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .service {
-        grid-column: span 12;
-      }
+    .hero-right{ padding:18px; }
+    .imgbox{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      min-height: 320px;
+      border: 1px solid rgba(63,46,31,.12);
+      box-shadow: 0 10px 28px rgba(63,46,31,.10);
+      background: rgba(255,255,255,.25);
+    }
+    /* FIX: éviter que l'image prenne une hauteur incohérente */
+    .imgbox img{
+      width:100%;
+      height: 320px;
+      object-fit: cover;
+      display:block;
     }
 
-    @media (max-width: 720px) {
-      .nav {
-        height: auto;
-        min-height: 78px;
-        padding: 8px 0;
-      }
-
-      .brand {
-        height: 72px;
-      }
-
-      .brand img {
-        height: 92px;
-      }
-
-      .menu {
-        justify-content: flex-end;
-      }
-
-      .dropdown-menu {
-        right: 0;
-        left: auto;
-      }
-
-      .section-banner {
-        align-items: flex-start;
-      }
-
-      .section-thumb {
-        display: none;
-      }
-
-      .price-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 4px;
-      }
+    /* SECTIONS */
+    .section{ margin-top: 26px; }
+    .section-head{
+      display:flex;
+      align-items: stretch;
+      gap: 12px;
+      margin: 18px 0 12px;
     }
+    @media (max-width: 720px){ .section-head{flex-direction:column;} }
+
+    .section-banner{
+      flex: 1;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 14px 14px 16px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.40);
+      box-shadow: 0 12px 30px rgba(63,46,31,.10);
+      overflow:hidden;
+      position:relative;
+    }
+    .section-banner::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(650px 260px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
+      pointer-events:none;
+    }
+    .section-title{
+      margin:0;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing:-.2px;
+    }
+    .section-sub{
+      margin: 2px 0 0;
+      opacity:.85;
+      font-size:.95rem;
+    }
+    .section-media{
+      width: 110px;
+      min-width:110px;
+      height: 74px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.22);
+      box-shadow: 0 10px 20px rgba(63,46,31,.10);
+      z-index:1;
+    }
+    .section-media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    /* GRID & SERVICES */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .service{
+      grid-column: span 6;
+      padding: 16px 16px 14px;
+      border-radius: var(--radius2);
+      display:flex;
+      flex-direction:column;
+      height: 100%;
+      transition: transform .12s ease, filter .15s ease;
+    }
+    .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
+    @media (max-width: 920px){ .service{ grid-column: span 12; } }
+
+    .service-head{
+      display:flex;
+      justify-content: space-between;
+      gap:10px;
+      margin-bottom: 8px;
+      align-items:flex-start;
+    }
+    .service h3{
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.25;
+      letter-spacing:-.1px;
+    }
+    .price{
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(48,87,24,.12);
+      border: 1px solid rgba(48,87,24,.18);
+      font-weight: 900;
+      white-space:nowrap;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .row{
+      display:flex;
+      align-items:baseline;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.30);
+    }
+    .row b{ font-weight: 750; }
+    .row span{ font-weight: 900; }
+
+    .hint{
+      margin-top:auto;
+      padding-top: 10px;
+      font-size:.95rem;
+      opacity:.9;
+    }
+
+    .note{
+      grid-column: span 12;
+      padding: 16px;
+    }
+    .divider{
+      height:1px;
+      background: rgba(63,46,31,.12);
+      margin: 12px 0;
+    }
+
   </style>
 </head>
 
 <body>
   <div id="top"></div>
 
-  <header class="site-header">
+   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="#top" aria-label="Accueil">
         <img
@@ -471,182 +424,151 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="card hero-content">
-        <div class="badge">Beauté du regard - Tarifs </div>
-
+  <div class="wrap">
+    <header class="hero">
+      <div class="card hero-left">
+        <div class="badge"><i></i> Beauté du Regard • Tarifs</div>
         <h1>Sublimez votre regard naturellement</h1>
-
-        <p class="intro">
-          Réhaussement, teinture ou extensions de cils : choisissez la prestation idéale
-          pour un regard plus intense, élégant et lumineux dès le réveil.
+        <p class="sub">
+         Réhaussement, teinture ou extensions de cils : choisissez la prestation idéale pour un regard plus intense, élégant et lumineux dès le réveil.
         </p>
-
         <div class="pill-row">
           <span class="pill">Technique respectueuse du cil naturel</span>
           <span class="pill">Résultat naturel ou glamour</span>
         </div>
       </div>
 
-      <aside class="card hero-image">
-        <div class="image-frame">
+      <aside class="card hero-right">
+        <div class="imgbox">
           <img
             src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="Beauté du regard et cils">
+            alt="Beauté du regard"
+            loading="lazy"
+          />
         </div>
       </aside>
-    </section>
+    </header>
 
-    <section class="section" id="rehaussement">
-      <div class="section-banner">
-        <div>
-          <h2 class="section-title">Réhaussement de cils</h2>
-          <p class="section-text">
-            Le réhaussement est parfait pour sublimer vos yeux naturellement grâce à vos cils recourbés.
-            Combiné avec une teinture, il permet d’intensifier le regard tout en gardant un effet naturel.
-          </p>
-        </div>
-
-        <div class="section-thumb" aria-hidden="true">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="">
+    <!-- SECTION: VISAGE -->
+    <section class="section" id="visage">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Réhaussement de cils</h2>
+            <p class="section-sub">Le réhaussement est parfait pour sublimer vos yeux naturellement grâce à vos cils recourbés. Combiné avec une teinture, il permet d’intensifier le regard tout en gardant un effet naturel..</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
         </div>
       </div>
 
       <div class="grid">
-        <article class="card service full">
+        <section class="card service">
           <div class="service-head">
             <h3>Prestations réhaussement</h3>
-            <div class="price-label">Tarifs</div>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Réhaussement de cils</strong>
-              <span>48€</span>
-            </li>
-            <li class="price-row">
-              <strong>Réhaussement de cils + teinture</strong>
-              <span>53€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Réhaussement de cils</b><span>48€</span></li>
+            <li class="row"><b>Réhaussement de cils + teinture</b><span>53€</span></li>
+
           </ul>
-        </article>
+
+        </section>
+
+  
       </div>
     </section>
 
-    <section class="section" id="extensions">
-      <div class="section-banner">
-        <div>
-          <h2 class="section-title">Extensions de cils</h2>
-          <p class="section-text">
-            Marre du mascara qui coule ? Les extensions de cils sont idéales pour gagner du temps
-            au quotidien. Optez pour un résultat très naturel avec le cil à cil, ou plus intense
-            et glamour avec la pose mixte.
-          </p>
-        </div>
-
-        <div class="section-thumb" aria-hidden="true">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273"
-            alt="">
+    <!-- SECTION: EXTENSION -->
+    <section class="section" id="corps">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Extensions de cils</h2>
+            <p class="section-sub">Marre du mascara qui coule ? Les extensions de cils sont idéales pour gagner du temps au quotidien. Optez pour un résultat très naturel avec le cil à cil, ou plus intense et glamour avec la pose mixte.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Elegance_et_douceur_des_jambes.png?v=1768585273" alt="">
+          </div>
         </div>
       </div>
 
       <div class="grid">
-        <article class="card service">
+        <section class="card service">
           <div class="service-head">
-            <h3>Cil à cil</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Cil à Cil</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Pose cil à cil</strong>
-              <span>65€</span>
-            </li>
-            <li class="price-row">
-              <strong>Comblage</strong>
-              <span>40€</span>
-            </li>
-            <li class="price-row">
-              <strong>Dépose + pose cil à cil</strong>
-              <span>75€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Pose cil à cil</b><span>65€</span></li>
+            <li class="row"><b>Comblage</b><span>40€</span></li>
+            <li class="row"><b>Dépose + pose cil à cil</b><span>75€</span></li>
+         
           </ul>
-        </article>
 
-        <article class="card service">
+      
+        </section>
+
+        <section class="card service">
           <div class="service-head">
             <h3>Mixte volume</h3>
-            <div class="price-label">Tarifs</div>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Pose mixte volume</strong>
-              <span>75€</span>
-            </li>
-            <li class="price-row">
-              <strong>Comblage</strong>
-              <span>50€</span>
-            </li>
-            <li class="price-row">
-              <strong>Dépose + pose mixte volume</strong>
-              <span>85€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Pose mixte volume</b><span>75€</span></li>
+            <li class="row"><b>Comblage</b><span>50€</span></li>
+            <li class="row"><b>Dépose + pose mixte volume</b><span>85€</span></li>
+            
           </ul>
-        </article>
 
-        <article class="card service full">
+      
+        </section>
+
+        <section class="card service">
           <div class="service-head">
-            <h3>Soin du regard</h3>
-            <div class="price-label">Tarifs</div>
+            <h3>Soin du Regard</h3>
+            <div class="price">Tarifs</div>
           </div>
 
-          <ul class="price-list">
-            <li class="price-row">
-              <strong>Dépose + soin</strong>
-              <span>25€</span>
-            </li>
+          <ul class="list">
+            <li class="row"><b>Dépose + soin</b><span>25€</span></li>
+           
           </ul>
-        </article>
+
+        </section>
       </div>
     </section>
-  </main>
 
-  <footer>
-    Beauté du regard — Tarifs indicatifs
-  </footer>
+
+  </div>
+
+  
 
   <script>
-    const dropdown = document.getElementById("tarifsDropdown");
-    const button = document.getElementById("tarifsBtn");
+    (function(){
+      const dd = document.getElementById('tarifsDropdown');
+      const btn = document.getElementById('tarifsBtn');
 
-    function closeDropdown() {
-      dropdown.classList.remove("is-open");
-      button.setAttribute("aria-expanded", "false");
-    }
-
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-
-      const isOpen = dropdown.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    document.addEventListener("click", closeDropdown);
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeDropdown();
+      function closeDropdown(){
+        dd.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
       }
-    });
 
-    dropdown.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", closeDropdown);
-    });
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = dd.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', closeDropdown);
+      dd.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDropdown));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdown(); });
+    })();
   </script>
 </body>
 </html>
