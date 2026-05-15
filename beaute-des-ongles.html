@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beauté des Ongles — Tarifs</title>
+  <style>
+    
+    :root{
+      --text: #3f2e1f;
+      --accent: #305718;
+      --btn: #7fa77a;
+      --btn-dark: #43290c;
+      --btn-text: #ffffff;
+      --bg: #f4e7d7;
+      --bg2: #ead7c0;
+      --card: rgba(255,255,255,.58);
+      --stroke: rgba(63,46,31,.18);
+      --shadow: 0 14px 35px rgba(63,46,31,.15);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --shine: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.12));
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 12%, rgba(127,167,122,.22), transparent 55%),
+        radial-gradient(1100px 650px at 82% 18%, rgba(67,41,12,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height:1.55;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 18px 70px;
+    }
+
+    /* =========================
+   HEADER (logo grand + marge faible)
+   ========================= */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(244,231,215,.88);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.nav-wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;        /* ← retire presque toute la marge */
+  height: 95px;           /* ← hauteur FIXE du header */
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+/* conteneur logo */
+.brand{
+  display:flex;
+  align-items:center;
+  height:100%;
+  overflow:hidden;        /* ← coupe le vide du PNG */
+}
+
+/* logo */
+.brand img{
+  height: 150px;          /* plus grand que le header */
+  display:block;
+  filter: drop-shadow(0 8px 18px rgba(63,46,31,.15));
+}
+
+
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-link, .dropbtn{
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 850;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  transition: .18s ease;
+}
+
+.nav-link:hover, .dropbtn:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
+
+/* Dropdown */
+.dropdown{ position: relative; }
+
+.caret{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  opacity: .85;
+}
+
+.dropdown-menu{
+  position:absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.85);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  display: none;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 750;
+  border: 1px solid transparent;
+  transition: .15s ease;
+}
+
+.dropdown-menu a:hover{
+  background: rgba(127,167,122,.18);
+  color: var(--accent);
+  border-color: rgba(48,87,24,.18);
+}
+
+.dropdown.is-open .dropdown-menu{ display:block; }
+
+/* Mobile */
+@media (max-width: 720px){
+  .nav-wrap{ padding: 6px 14px; gap: 10px; }
+  .brand img{
+    height: 70px;
+    transform: scale(1.04);
+  }
+  .dropdown-menu{ left: 0; right: 0; min-width: unset; }
+}
+
+    /* HERO */
+    header.hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: var(--shine);
+      opacity:.35;
+      pointer-events:none;
+      mask: radial-gradient(600px 240px at 18% 10%, #000 0%, transparent 60%);
+    }
+
+    .hero-left{ padding: 26px 24px 22px; }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(48,87,24,.28);
+      background: rgba(127,167,122,.18);
+      font-weight: 700;
+      letter-spacing:.2px;
+      width: fit-content;
+    }
+    .badge i{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
+    }
+
+    h1{
+      margin: 12px 0 10px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.4px;
+    }
+
+    .sub{
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      opacity: .92;
+      max-width: 62ch;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px dashed rgba(63,46,31,.22);
+      background: rgba(255,255,255,.28);
+      font-size: .95rem;
+    }
+
+    .hero-right{ padding:18px; }
+    .imgbox{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      min-height:280px;
+      border: 1px solid rgba(63,46,31,.12);
+      box-shadow: 0 10px 28px rgba(63,46,31,.10);
+      background: rgba(255,255,255,.25);
+    }
+    .imgbox img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+    }
+
+    /* SECTION HEADERS */
+    .section{
+      margin-top: 26px;
+    }
+    .section-head{
+      display:flex;
+      align-items: stretch;
+      gap: 12px;
+      margin: 18px 0 12px;
+    }
+    @media (max-width: 720px){ .section-head{flex-direction:column;} }
+
+    .section-banner{
+      flex: 1;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 14px 14px 16px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.38);
+      box-shadow: 0 12px 30px rgba(63,46,31,.10);
+      overflow:hidden;
+      position:relative;
+    }
+    .section-banner::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(600px 240px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
+      pointer-events:none;
+    }
+    .section-title{
+      margin:0;
+      font-size: 1.35rem;
+      font-weight: 850;
+      letter-spacing:-.2px;
+    }
+    .section-sub{
+      margin: 2px 0 0;
+      opacity:.85;
+      font-size:.95rem;
+    }
+    .section-media{
+      width: 110px;
+      min-width:110px;
+      height: 74px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(63,46,31,.12);
+      background: rgba(255,255,255,.22);
+      box-shadow: 0 10px 20px rgba(63,46,31,.10);
+      z-index:1;
+    }
+    .section-media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .service{
+      grid-column: span 6;
+      padding: 16px 16px 14px;
+      border-radius: var(--radius2);
+      transition: transform .12s ease, filter .15s ease;
+    }
+    .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
+    @media (max-width: 920px){ .service{ grid-column: span 12; } }
+
+    .service-head{
+      display:flex;
+      justify-content: space-between;
+      gap:10px;
+      margin-bottom: 8px;
+      align-items:flex-start;
+    }
+    .service h3{
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.25;
+      letter-spacing:-.1px;
+    }
+
+    .price{
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(48,87,24,.12);
+      border: 1px solid rgba(48,87,24,.18);
+      font-weight: 900;
+      white-space:nowrap;
+    }
+
+    ul{ margin: 10px 0 0 18px; padding:0; }
+    li{ margin: 4px 0; }
+
+    .desc{
+      margin: 10px 0 0;
+      font-size:.95rem;
+      opacity:.9;
+    }
+
+    .supp{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(67,41,12,.06);
+      border: 1px dashed rgba(67,41,12,.22);
+      font-size:.95rem;
+    }
+    .supp b{ color: var(--btn-dark); }
+
+    .note{
+      grid-column: span 12;
+      padding: 16px;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(63,46,31,.12);
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+   <div id="top"></div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Design_sans_titre_-_2026-01-16T163325.793.png?v=1768577623"
+          alt="Logo"
+          loading="lazy"
+        />
+      </a>
+
+      <nav class="menu" aria-label="Navigation principale">
+        <a class="nav-link" href="https://killevent.github.io/tests/">Accueil</a>
+
+        <div class="dropdown" id="tarifsDropdown">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" id="tarifsBtn">
+            Tarifs <span class="caret" aria-hidden="true"></span>
+          </button>
+
+          <div class="dropdown-menu" role="menu" aria-labelledby="tarifsBtn">
+            <a href="https://killevent.github.io/tests/beaute-des-ongles.html" role="menuitem">Beauté Ongles</a>
+            <a href="https://killevent.github.io/tests/soins-visage" target="_blank" rel="noopener" role="menuitem">Soins Visage</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="card hero-left">
+        <div class="badge"><i></i> Beauté des ongles • Tarifs</div>
+        <h1>Des ongles nets, élégants et soignés pour vos mains et pour vos pieds.</h1>
+        <p class="sub">
+          Manucures, beauté des pieds, poses de vernis (classique ou semi-permanent) : des prestations
+          pensées pour un résultat propre, durable et raffiné.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Semi-permanent : tenue jusqu’à ~3 semaines (selon ongles & mode de vie)</span>
+          <span class="pill">Pose sur ongles naturels uniquement (pas d’extension artificielle).</span>
+        </div>
+      </div>
+
+      <aside class="card hero-right">
+        <div class="imgbox">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286"
+            alt="Beauté des ongles"
+            loading="lazy"
+          />
+        </div>
+      </aside>
+    </header>
+
+    <!-- SECTION: SEMI -->
+    <section class="section" id="semi">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Vernis semi-permanent Mains ou Pieds</h2>
+            <p class="section-sub">Le vernis semi-permanent offre une tenue plus longue qu’un vernis classique (jusqu’à environ 3 semaines),
+        selon la qualité des ongles et le mode de vie.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Pose de vernis semi-permanent</h3>
+            <div class="price">25€</div>
+          </div>
+          <ul>
+            <li>Coupe</li>
+            <li>Limage</li>
+            <li>Nettoyage des cuticules</li>
+            <li>Préparation des ongles</li>
+            <li>Pose de vernis semi-permanent</li>
+          </ul>
+          <div class="supp"><b>Supplément 3€ :</b> French ou Babyboomer</div>
+        </section>
+
+       
+       
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Dépose + soin des ongles</h3>
+            <div class="price">13€</div>
+          </div>
+          <ul>
+            <li>Retrait du semi-permanent</li>
+            <li>Coupe & limage (mise en forme)</li>
+            <li>Soin nourrissant</li>
+            <li>Base protectrice</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- SECTION: HANDS -->
+    <section class="section" id="mains">
+      <div class="section-head">
+        <div class="section-banner">
+          <div>
+            <h2 class="section-title">Manucures & Soins mains</h2>
+            <p class="section-sub">Un rendu propre et soigné, du plus express au plus cocooning.</p>
+          </div>
+          <div class="section-media" aria-hidden="true">
+            <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card service">
+          <div class="service-head">
+            <h3>Manucure</h3>
+            <div class="price">20€</div>
+          </div>
+          <ul>
+            <li>Coupe</li>
+            <li>Limage</li>
+            <li>Retrait des cuticules</li>
+            <li>Huile nourrissante</li>
+            <li>Polissage</li>
+            <li>Base transparente</li>
+          </ul>
+          <p class="desc">Un petit soin express qui donnera un rendu soigné à vos ongles.</p>
+        </section>
+
+        <section class="card service">
+          <div class="service-head">
+            <h3>Manucure avec Soin</h3>
+            <div class="price">25€</div>
+          </div>
+          <ul>
+            <li>Gommage des mains</li>
+            <li>Bain émollient</li>
+            <li>Coupe, limage, retrait des cuticules</li>
+            <li>Huile nourrissante</li>
+            <li>Modelage</li>
+            <li>Polissage</li>
+            <li>Base transparente</li>
+          </ul>
+          <p class="desc">
+            Retrouvez la douceur de vos mains grâce au gommage tout en savourant un moment de détente grâce au modelage.
+          </p>
+        </section>
+      </div>
+    </section>
+
+<!-- SECTION: FEET -->
+<section class="section" id="pieds">
+  <div class="section-head">
+    <div class="section-banner">
+      <div>
+        <h2 class="section-title">Beauté des pieds</h2>
+        <p class="section-sub">Entretien, détente, ou soin complet : à chaque pied sa formule.</p>
+      </div>
+      <div class="section-media" aria-hidden="true">
+        <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <section class="card service">
+      <div class="service-head">
+        <h3>Beauté des pieds</h3>
+        <div class="price">20€</div>
+      </div>
+      <ul>
+        <li>Coupe</li>
+        <li>Limage</li>
+        <li>Retrait des cuticules</li>
+        <li>Huile nourrissante</li>
+        <li>Polissage</li>
+        <li>Base transparente</li>
+      </ul>
+    </br></br></br><p class="desc">Parfait pour entretenir vos ongles avant ou après les beaux jours.</p>
+    </section>
+
+    <section class="card service">
+      <div class="service-head">
+        <h3>Beauté des pieds avec Soin & Douceur</h3>
+        <div class="price">35€</div>
+      </div>
+      <ul>
+        <li>Coupe, limage, retrait des cuticules</li>
+        <li>Huile nourrissante</li>
+        <li>Gommage</li>
+        <li>Exfoliant pierre callosités</li>
+        <li>Bain de pieds relaxant</li>
+        <li>Modelage détente</li>
+        <li>Masque hydratant</li>
+        <li>Polissage</li>
+        <li>Base transparente</li>
+      </ul>
+      <p class="desc">Un véritable soin complet ! Un pur moment de relaxation.</p>
+    </section>
+  </div>
+</section>
+
+
+<!-- SECTION: VERNIS CLASSIQUE -->
+<section class="section" id="vernis-classique">
+  <div class="section-head">
+    <div class="section-banner">
+      <div>
+        <h2 class="section-title">Vernis classique</h2>
+        <p class="section-sub">La touche couleur express, parfaite pour mains ou pieds.</p>
+      </div>
+      <div class="section-media" aria-hidden="true">
+        <img src="https://cdn.shopify.com/s/files/1/0726/0690/8753/files/Beaute_des_ongles.png?v=1768585286" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <section class="card service">
+      <div class="service-head">
+        <h3>Pose de vernis classique (mains ou pieds)</h3>
+        <div class="price">10€</div>
+      </div>
+
+      <ul>
+        <li>Application de vernis classique</li>
+        <li>Finition brillante et soignée</li>
+      </ul>
+
+      <p class="desc">
+        Idéal pour une mise en beauté rapide et élégante.
+      </p>
+    </section>
+
+    
+  </div>
+</section>
+
+</body>
+</html>
