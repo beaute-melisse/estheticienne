@@ -6,422 +6,542 @@
   <title>Beauté des Ongles — Tarifs</title>
   <style>
     
-    :root{
-      --text: #3f2e1f;
-      --accent: #305718;
-      --btn: #7fa77a;
-      --btn-dark: #43290c;
-      --btn-text: #ffffff;
-      --bg: #f4e7d7;
-      --bg2: #ead7c0;
-      --card: rgba(255,255,255,.58);
-      --stroke: rgba(63,46,31,.18);
-      --shadow: 0 14px 35px rgba(63,46,31,.15);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1120px;
-      --shine: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.12));
-    }
+   Oui, remplace **tout ton CSS** par celui-ci :
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 18% 12%, rgba(127,167,122,.22), transparent 55%),
-        radial-gradient(1100px 650px at 82% 18%, rgba(67,41,12,.16), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      line-height:1.55;
-    }
+```css
+:root {
+  --text: #3f2e1f;
+  --text-soft: rgba(63, 46, 31, .74);
+  --accent: #305718;
+  --accent-2: #7fa77a;
+  --brown: #43290c;
+  --bg: #f4e7d7;
+  --bg2: #ead7c0;
+  --card: rgba(255,255,255,.62);
+  --stroke: rgba(63,46,31,.16);
+  --shadow: 0 18px 45px rgba(63,46,31,.14);
+  --radius: 20px;
+  --radius2: 28px;
+  --max: 1120px;
+}
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 26px 18px 70px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    /* =========================
-   HEADER (logo grand + marge faible)
-   ========================= */
+html {
+  scroll-behavior: smooth;
+}
 
-.site-header{
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.55;
+  background:
+    radial-gradient(1000px 600px at 12% 8%, rgba(127,167,122,.25), transparent 58%),
+    radial-gradient(900px 560px at 90% 5%, rgba(67,41,12,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 18px 70px;
+}
+
+/* HEADER */
+
+.site-header {
   position: sticky;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(12px);
   background: rgba(244,231,215,.88);
-  border-bottom: 1px solid var(--stroke);
+  border-bottom: 1px solid rgba(63,46,31,.12);
+  backdrop-filter: blur(18px);
 }
 
-.nav-wrap{
+.nav-wrap {
   max-width: var(--max);
+  height: 88px;
   margin: 0 auto;
-  padding: 0 18px;        /* ← retire presque toute la marge */
-  height: 95px;           /* ← hauteur FIXE du header */
-  display:flex;
-  align-items:center;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 18px;
 }
 
-/* conteneur logo */
-.brand{
-  display:flex;
-  align-items:center;
-  height:100%;
-  overflow:hidden;        /* ← coupe le vide du PNG */
-}
-
-/* logo */
-.brand img{
-  height: 150px;          /* plus grand que le header */
-  display:block;
-  filter: drop-shadow(0 8px 18px rgba(63,46,31,.15));
-}
-
-
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.nav-link, .dropbtn{
-  text-decoration:none;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
   color: var(--text);
-  font-weight: 850;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  transition: .18s ease;
 }
 
-.nav-link:hover, .dropbtn:hover{
-  background: rgba(127,167,122,.18);
-  color: var(--accent);
-  border-color: rgba(48,87,24,.18);
+.brand img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 10px 24px rgba(63,46,31,.14);
 }
 
-/* Dropdown */
-.dropdown{ position: relative; }
-
-.caret{
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  margin-top: -2px;
-  opacity: .85;
-}
-
-.dropdown-menu{
-  position:absolute;
-  right: 0;
-  top: calc(100% + 10px);
-  min-width: 220px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,.85);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
+.brand + .brand {
   display: none;
 }
 
-.dropdown-menu a{
-  display:block;
-  padding: 10px 12px;
-  border-radius: 14px;
-  text-decoration:none;
-  color: var(--text);
-  font-weight: 750;
-  border: 1px solid transparent;
-  transition: .15s ease;
+.brand::after {
+  content: "Beauté Mélisse";
+  font-size: 1.08rem;
+  font-weight: 950;
+  letter-spacing: -.2px;
 }
 
-.dropdown-menu a:hover{
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 850;
+  white-space: nowrap;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 14px 28px rgba(48,87,24,.25);
+  transition: .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(48,87,24,.3);
+}
+
+.wa-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255,255,255,.18);
+}
+
+/* HERO */
+
+header.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px 240px at 15% 0%, rgba(255,255,255,.55), transparent 65%);
+  z-index: 0;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-left {
+  padding: 30px 26px 26px;
+}
+
+.badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(48,87,24,.24);
   background: rgba(127,167,122,.18);
+  font-weight: 800;
+}
+
+.badge i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(48,87,24,.12);
+}
+
+h1 {
+  margin: 14px 0 12px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.5px;
+}
+
+.sub {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 13px;
+  border-radius: 999px;
+  border: 1px dashed rgba(63,46,31,.22);
+  background: rgba(255,255,255,.3);
+  font-size: .95rem;
+  font-weight: 650;
+}
+
+.hero-right {
+  padding: 18px;
+}
+
+.imgbox {
+  height: 100%;
+  min-height: 310px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(63,46,31,.12);
+  background: rgba(255,255,255,.25);
+  box-shadow: 0 12px 28px rgba(63,46,31,.1);
+}
+
+.imgbox img {
+  width: 100%;
+  height: 100%;
+  min-height: 310px;
+  object-fit: cover;
+}
+
+/* SECTIONS */
+
+.section {
+  margin-top: 30px;
+}
+
+.section-head {
+  margin: 18px 0 13px;
+}
+
+.section-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 18px;
+  border-radius: var(--radius2);
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.42);
+  box-shadow: 0 12px 30px rgba(63,46,31,.1);
+}
+
+.section-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(650px 250px at 90% 10%, rgba(127,167,122,.24), transparent 62%);
+}
+
+.section-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.12;
+  font-weight: 950;
+  letter-spacing: -.3px;
+}
+
+.section-sub {
+  max-width: 78ch;
+  margin: 6px 0 0;
+  color: var(--text-soft);
+  font-size: .97rem;
+}
+
+.section-media {
+  width: 118px;
+  min-width: 118px;
+  height: 82px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(63,46,31,.12);
+  background: rgba(255,255,255,.25);
+  box-shadow: 0 10px 22px rgba(63,46,31,.11);
+}
+
+.section-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* GRID & SERVICES */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.service {
+  grid-column: span 6;
+  padding: 18px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.service:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 52px rgba(63,46,31,.17);
+}
+
+.service-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  letter-spacing: -.15px;
+}
+
+.price {
+  flex: 0 0 auto;
+  padding: 7px 12px;
+  border-radius: 999px;
   color: var(--accent);
-  border-color: rgba(48,87,24,.18);
+  background: rgba(48,87,24,.12);
+  border: 1px solid rgba(48,87,24,.18);
+  font-weight: 950;
+  white-space: nowrap;
 }
 
-.dropdown.is-open .dropdown-menu{ display:block; }
+ul {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
 
-/* Mobile */
-@media (max-width: 720px){
-  .nav-wrap{ padding: 6px 14px; gap: 10px; }
-  .brand img{
-    height: 70px;
-    transform: scale(1.04);
+li {
+  position: relative;
+  padding: 9px 11px 9px 30px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.28);
+  border: 1px solid rgba(63,46,31,.1);
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 17px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+.desc {
+  margin: 12px 0 0;
+  color: var(--text-soft);
+  font-size: .95rem;
+}
+
+.supp {
+  margin-top: 12px;
+  padding: 11px 13px;
+  border-radius: 16px;
+  background: rgba(67,41,12,.06);
+  border: 1px dashed rgba(67,41,12,.22);
+  font-size: .95rem;
+}
+
+.supp b {
+  color: var(--brown);
+}
+
+.note {
+  grid-column: span 12;
+  padding: 18px;
+}
+
+.divider {
+  height: 1px;
+  margin: 12px 0;
+  background: rgba(63,46,31,.12);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 920px) {
+  header.hero {
+    grid-template-columns: 1fr;
   }
-  .dropdown-menu{ left: 0; right: 0; min-width: unset; }
+
+  .service {
+    grid-column: span 12;
+  }
 }
 
-    /* HERO */
-    header.hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      margin-top: 10px;
-      align-items: stretch;
-    }
-    @media (max-width: 920px){ header.hero{grid-template-columns: 1fr;} }
+@media (max-width: 720px) {
+  .wrap {
+    padding: 20px 14px 56px;
+  }
 
-    .card{
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
-      position:relative;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: var(--shine);
-      opacity:.35;
-      pointer-events:none;
-      mask: radial-gradient(600px 240px at 18% 10%, #000 0%, transparent 60%);
-    }
+  .nav-wrap {
+    height: auto;
+    min-height: 78px;
+    padding: 10px 14px;
+  }
 
-    .hero-left{ padding: 26px 24px 22px; }
+  .brand {
+    gap: 10px;
+  }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(48,87,24,.28);
-      background: rgba(127,167,122,.18);
-      font-weight: 700;
-      letter-spacing:.2px;
-      width: fit-content;
-    }
-    .badge i{
-      width:10px;height:10px;border-radius:50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(48,87,24,.12);
-    }
+  .brand img {
+    width: 56px;
+    height: 56px;
+  }
 
-    h1{
-      margin: 12px 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.05;
-      letter-spacing:-.4px;
-    }
+  .brand::after {
+    font-size: .94rem;
+  }
 
-    .sub{
-      margin: 0 0 12px;
-      font-size: 1.05rem;
-      opacity: .92;
-      max-width: 62ch;
-    }
+  .btn {
+    padding: 9px 12px;
+    min-height: 40px;
+    font-size: .86rem;
+  }
 
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 12px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px dashed rgba(63,46,31,.22);
-      background: rgba(255,255,255,.28);
-      font-size: .95rem;
-    }
+  .hero-left {
+    padding: 24px 20px;
+  }
 
-    .hero-right{ padding:18px; }
-    .imgbox{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      min-height:280px;
-      border: 1px solid rgba(63,46,31,.12);
-      box-shadow: 0 10px 28px rgba(63,46,31,.10);
-      background: rgba(255,255,255,.25);
-    }
-    .imgbox img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-      transform: scale(1.02);
-    }
+  .hero-right {
+    padding: 14px;
+  }
 
-    /* SECTION HEADERS */
-    .section{
-      margin-top: 26px;
-    }
-    .section-head{
-      display:flex;
-      align-items: stretch;
-      gap: 12px;
-      margin: 18px 0 12px;
-    }
-    @media (max-width: 720px){ .section-head{flex-direction:column;} }
+  .imgbox,
+  .imgbox img {
+    min-height: 240px;
+  }
 
-    .section-banner{
-      flex: 1;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 14px 14px 16px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.38);
-      box-shadow: 0 12px 30px rgba(63,46,31,.10);
-      overflow:hidden;
-      position:relative;
-    }
-    .section-banner::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(600px 240px at 85% 10%, rgba(127,167,122,.25), transparent 60%);
-      pointer-events:none;
-    }
-    .section-title{
-      margin:0;
-      font-size: 1.35rem;
-      font-weight: 850;
-      letter-spacing:-.2px;
-    }
-    .section-sub{
-      margin: 2px 0 0;
-      opacity:.85;
-      font-size:.95rem;
-    }
-    .section-media{
-      width: 110px;
-      min-width:110px;
-      height: 74px;
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(63,46,31,.12);
-      background: rgba(255,255,255,.22);
-      box-shadow: 0 10px 20px rgba(63,46,31,.10);
-      z-index:1;
-    }
-    .section-media img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
+  .section-banner {
+    align-items: flex-start;
+    padding: 16px;
+  }
 
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 12px;
-    }
-    .service{
-      grid-column: span 6;
-      padding: 16px 16px 14px;
-      border-radius: var(--radius2);
-      transition: transform .12s ease, filter .15s ease;
-    }
-    .service:hover{ transform: translateY(-1px); filter: brightness(1.01); }
-    @media (max-width: 920px){ .service{ grid-column: span 12; } }
+  .section-media {
+    display: none;
+  }
 
-    .service-head{
-      display:flex;
-      justify-content: space-between;
-      gap:10px;
-      margin-bottom: 8px;
-      align-items:flex-start;
-    }
-    .service h3{
-      margin:0;
-      font-size:1.08rem;
-      line-height:1.25;
-      letter-spacing:-.1px;
-    }
+  .service {
+    padding: 16px;
+  }
+}
 
-    .price{
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(48,87,24,.12);
-      border: 1px solid rgba(48,87,24,.18);
-      font-weight: 900;
-      white-space:nowrap;
-    }
+@media (max-width: 480px) {
+  .brand::after {
+    content: "Beauté Mélisse";
+  }
 
-    ul{ margin: 10px 0 0 18px; padding:0; }
-    li{ margin: 4px 0; }
+  .btn {
+    font-size: 0;
+    width: 44px;
+    padding: 0;
+  }
 
-    .desc{
-      margin: 10px 0 0;
-      font-size:.95rem;
-      opacity:.9;
-    }
+  .wa-dot {
+    margin: 0;
+  }
 
-    .supp{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(67,41,12,.06);
-      border: 1px dashed rgba(67,41,12,.22);
-      font-size:.95rem;
-    }
-    .supp b{ color: var(--btn-dark); }
+  h1 {
+    font-size: 2rem;
+  }
 
-    .note{
-      grid-column: span 12;
-      padding: 16px;
-    }
+  .service-head {
+    flex-direction: column;
+  }
+}.section-banner{ flex: 1; display:flex; align-items:center; justify-content: space-between; gap: 14px; padding: 14px 14px 14px 16px; border-radius: var(--radius2); border: 1px solid var(--stroke); background: rgba(255,255,255,.40); box-shadow: 0 12px 30px rgba(63,46,31,.10); overflow:hidden; position:relative; } .section-banner::after{ content:""; position:absolute; inset:0; background: radial-gradient(650px 260px at 85% 10%, rgba(127,167,122,.25), transparent 60%); pointer-events:none; } .section-title{ margin:0; font-size: 1.35rem; font-weight: 900; letter-spacing:-.2px; } .section-sub{ margin: 2px 0 0; opacity:.85; font-size:.95rem; } .section-media{ width: 110px; min-width:110px; height: 74px; border-radius: 16px; overflow:hidden; border: 1px solid rgba(63,46,31,.12); background: rgba(255,255,255,.22); box-shadow: 0 10px 20px rgba(63,46,31,.10); z-index:1; } .section-media img{ width:100%; height:100%; object-fit: cover; display:block; } /* GRID & SERVICES */ .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 12px; } .service{ grid-column: span 6; padding: 16px 16px 14px; border-radius: var(--radius2); display:flex; flex-direction:column; height: 100%; transition: transform .12s ease, filter .15s ease; } .service:hover{ transform: translateY(-1px); filter: brightness(1.01); } @media (max-width: 920px){ .service{ grid-column: span 12; } } .service-head{ display:flex; justify-content: space-between; gap:10px; margin-bottom: 8px; align-items:flex-start; } .service h3{ margin:0; font-size:1.08rem; line-height:1.25; letter-spacing:-.1px; } .price{ padding: 7px 10px; border-radius: 999px; background: rgba(48,87,24,.12); border: 1px solid rgba(48,87,24,.18); font-weight: 900; white-space:nowrap; } .list{ margin: 10px 0 0; padding:0; list-style:none; display:grid; gap:8px; } .row{ display:flex; align-items:baseline; justify-content: space-between; gap: 14px; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(63,46,31,.12); background: rgba(255,255,255,.30); } .row b{ font-weight: 750; } .row span{ font-weight: 900; } .hint{ margin-top:auto; padding-top: 10px; font-size:.95rem; opacity:.9; } .note{ grid-column: span 12; padding: 16px; } .divider{ height:1px; background: rgba(63,46,31,.12); margin: 12px 0; }
+</style>
 
-    .divider{
-      height:1px;
-      background: rgba(63,46,31,.12);
-      margin: 10px 0;
-    }
-  </style>
 </head>
 
 <body>
 
    <div id="top"></div>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="Accueil">
+      <img
+        src="https://beaute-melisse.github.io/estheticienne/logo.png"
+        alt="Logo Beauté Mélisse">
+      <span>
+        <strong>Beauté Mélisse</strong>
+        <small>Beauté des ongles</small>
+      </span>
+    </a>
 
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#top" aria-label="Accueil">
-        <img
-          src="https://beaute-melisse.github.io/estheticienne/logo.png"
-          alt="Logo"
-          loading="lazy"
-        />
-      </a>
-        <a class="brand" href="#top" aria-label="Accueil">
-        <img
-          src="https://beaute-melisse.github.io/estheticienne/ongle.png"
-          alt="Logo"
-          loading="lazy"
-        />
-      </a>
+    <nav class="header-actions" aria-label="Navigation principale">
+      <a class="nav-link" href="https://killevent.github.io/tests/">Accueil</a>
 
-   <a class="btn"
-           href="https://wa.me/33609374492"
-           target="_blank">
-          <span class="wa-dot"></span>
-          Contactez moi : 06 09 37 44 92 
-        </a>
-    </div>
-  </header>
+      <a class="whatsapp-btn"
+         href="https://wa.me/33609374492"
+         target="_blank"
+         rel="noopener">
+        <span class="wa-dot"></span>
+        06 09 37 44 92
+      </a>
+    </nav>
+  </div>
+</header>
 
   <div class="wrap">
     <header class="hero">
